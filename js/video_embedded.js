@@ -1,18 +1,21 @@
-$(function () {
-    var videoBtn = $('.video-btn');
-
-    videoBtn.click(function () {
-        var videoContainer = $(this).closest('.video-container');
-        var src = videoContainer.data('url');
-        var title = videoContainer.data('title');
-        var videoFrame = $('<iframe>', {
-            src: src,
-            frameborder: 0,
-            title: title,
-            allow : "accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" ,
-            class: 'video-iframe'
-        });
-
-        videoContainer.append(videoFrame);
+$(document).ready(function() {
+    Fancybox.bind("[data-fancybox]", {
+        // Fancybox options
+        autoFocus: false,
+        trapFocus: false,
+        placeFocusBack: false,
+        dragToClose: true,
+        Toolbar: {
+            display: {
+                left: [],
+                middle: [],
+                right: ["close"],
+            },
+        },
+        Youtube: {
+            ratio: 16 / 9,
+            autoplay: true,
+            mute: false,
+        },
     });
 });
