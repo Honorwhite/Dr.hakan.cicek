@@ -387,41 +387,34 @@
                     return;
                 }
 
-                // Form data collection
+                // Form verilerini API'nin beklediği alan adlarıyla eşleştirme
                 const formData = {
-                    name: document.getElementById('name').value,
-                    phone: document.getElementById('phone').value,
-                    email: document.getElementById('email').value,
-                    treatment: document.getElementById('treatment').value,
-                    preferred_date: document.getElementById('preferred_date').value,
-                    preferred_time: document.getElementById('preferred_time').value,
-                    symptoms: document.getElementById('symptoms').value
+                    adSoyad: $('#name').val(),
+                    telefon: $('#phone').val(),
+                    email: $('#email').val(),
+                    talepTuru: $('#treatment').val(),
+                    tarih: $('#preferred_date').val(),
+                    saat: $('#preferred_time').val(),
+                    sikayet: $('#symptoms').val()
                 };
 
-                // Send data to PHP endpoint
-                fetch('process_appointment.php', {
-                    method: 'POST',
-                    headers: {
-                        'Content-Type': 'application/json',
+                // jQuery ile API'ye POST isteği gönderme
+                $.ajax({
+                    url: 'http://localhost:3000/api/randevu',
+                    type: 'POST',
+                    contentType: 'application/json',
+                    data: JSON.stringify(formData),
+                    success: function(response) {
+                        successToastInstance.show();
+                        form.reset();
+                        form.classList.remove('was-validated');
                     },
-                    body: JSON.stringify(formData)
-                })
-                    .then(response => response.json())
-                    .then(data => {
-                        if (data.success) {
-                            successToastInstance.show();
-                            form.reset();
-                            form.classList.remove('was-validated');
-                        } else {
-                            errorToast.querySelector('.toast-body').textContent = data.message;
-                            errorToastInstance.show();
-                        }
-                    })
-                    .catch(error => {
-                        console.error('Error:', error);
+                    error: function(xhr, status, error) {
+                        console.error('Hata:', error);
                         errorToast.querySelector('.toast-body').textContent = 'Bir hata oluştu! Lütfen daha sonra tekrar deneyiniz.';
                         errorToastInstance.show();
-                    });
+                    }
+                });
             });
         });
     </script>
