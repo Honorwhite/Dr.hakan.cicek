@@ -32,6 +32,53 @@
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/@fancyapps/ui@5.0/dist/fancybox/fancybox.umd.js"></script>
     <script src="js/video_embedded.js"></script>
+    <style>
+        .fancybox__caption {
+            background: rgba(0, 0, 0, 0.8);
+            padding: 20px;
+            border-radius: 8px;
+            max-width: 80%;
+            margin: 0 auto;
+        }
+
+        .fancybox__caption p {
+            color: #fff;
+            font-size: 16px;
+            line-height: 1.6;
+            margin: 0;
+            text-align: left;
+        }
+
+        .fancybox__caption h3 {
+            color: #FF9700;
+            font-size: 20px;
+            margin-bottom: 10px;
+            font-weight: bold;
+        }
+
+        .fancybox__caption .caption-content {
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+        }
+
+        .fancybox__caption .caption-content .caption-section {
+            background: rgba(255, 255, 255, 0.1);
+            padding: 10px;
+            border-radius: 5px;
+            margin-bottom: 5px;
+        }
+
+        .fancybox__caption .caption-content .caption-section h4 {
+            color: #FF9700;
+            font-size: 16px;
+            margin-bottom: 5px;
+        }
+
+        .fancybox__caption .caption-content .caption-section p {
+            font-size: 14px;
+        }
+    </style>
 </head>
 
 <body>
@@ -139,43 +186,199 @@
                                 <div class="swiper-wrapper">
                                     <div class="swiper-slide p-0 rounded-5 overflow-hidden">
                                         <div class="d-flex justify-content-center">
-                                            <img src="image/hknsoc1.jpg" class="img-fluid rounded-5 w-100" alt="image">
+                                            <a href="image/hknsoc1.jpg" data-fancybox="gallery" data-caption="❄️ Donuk Omuz: Günlük Hayatınızı Zorlaştırmasın!
+                                                Omzunuzu hareket ettirmekte zorlanıyor musunuz? Sabahları kolunuzu kaldırırken acı mı hissediyorsunuz? Saçınızı taramak, gömlek giymek, çantanızı omzunuza asmak bile zorlaşıyorsa Donuk Omuz Sendromu yaşıyor olabilirsiniz!
+                                                
+                                                💢 Donuk Omuz Nedir?
+                                                Omuz eklem kapsülünün sertleşmesiyle hareketin kısıtlanmasına neden olan bu durum, zamanla ağrıyı artırarak günlük yaşamınızı zorlaştırır.
+                                                
+                                                🚨 İhmal Ederseniz Ne Olur?
+                                                ✔️ Ağrılar zamanla şiddetlenebilir.
+                                                ✔️ Omuz hareketleri tamamen kısıtlanabilir.
+                                                ✔️ Günlük işlerinizi yapamaz hale gelebilirsiniz.
+                                                
+                                                ✨ Peki, Ne Yapmalısınız?
+                                                ✅ Erken dönemde fizik tedavi ve egzersizlerle hareket kabiliyetinizi koruyabilirsiniz.
+                                                ✅ Manuel terapi ve özel uygulamalarla omzunuzu rahatlatabilirsiniz.
+                                                ✅ Gerekli durumlarda medikal tedavi veya artroskopik cerrahi ile kalıcı çözümler sağlanabilir.
+                                                ">
+                                                <img src="image/hknsoc1.jpg" class="img-fluid rounded-5 w-100"
+                                                    alt="❄️ Donuk Omuz: Günlük Hayatınızı Zorlaştırmasın!">
+                                            </a>
                                         </div>
                                     </div>
                                     <div class="swiper-slide p-0 rounded-5 overflow-hidden">
                                         <div class="d-flex justify-content-center">
-                                            <img src="image/hknsoc2.jpg" class="img-fluid rounded-5 w-100" alt="image">
+                                            <a href="image/hknsoc2.jpg" data-fancybox="gallery"
+                                                data-caption="Sporcu Yaralanmalarında 5 Önemli Etken!
+                                                Spor yaparken sakatlanmaların önüne geçmek için vücudunuzu tanımak ve doğru önlemleri almak çok önemli! İşte sporcu yaralanmalarının en yaygın 5 nedeni:
+                                                
+                                                1️⃣ Isınma ve Esneme Eksikliği 🚫
+                                                Kaslarınızı ve eklemlerinizi hazırlamadan antrenmana başlamak sakatlanma riskini ciddi şekilde artırır. Düşük tempolu ısınma ve esneme hareketleri yapmayı ihmal etmeyin!
+                                                
+                                                2️⃣ Yanlış Teknik ve Hatalı Ekipman ⚠️
+                                                Yanlış ayakkabı, hatalı form veya kötü spor ekipmanları kaslarınıza ve eklemlerinize fazla yük bindirebilir. Antrenmanlarınızı doğru teknikle yaptığınızdan emin olun!
+                                                
+                                                3️⃣ Aşırı Zorlama ve Dinlenme Eksikliği 🏋️‍♂️
+                                                Vücudu kapasitesinin üstünde zorlamak kas yırtılmalarına, eklem sakatlanmalarına ve stres kırıklarına yol açabilir. Vücudunuza toparlanması için zaman tanıyın!
+                                                
+                                                4️⃣ Dengesiz Beslenme ve Su Kaybı 🥗💧
+                                                Kasların ve eklemlerin güçlü kalması için yeterli protein, vitamin ve mineralleri almak şart! Yetersiz beslenme ve su kaybı, sakatlanmaları artıran en büyük faktörlerden biridir.
+                                                
+                                                5️⃣ Önceden Var Olan Yaralanmalar 🤕
+                                                Daha önce yaşadığınız sakatlıkları tam iyileşmeden zorlamak, daha ciddi hasarlara neden olabilir. Ağrı ve hassasiyet hissediyorsanız antrenmana ara verin ve profesyonel destek alın!">
+                                                <img src="image/hknsoc2.jpg" class="img-fluid rounded-5 w-100"
+                                                    alt="Sporcu Yaralanmalarında 5 Önemli Etken!">
+                                            </a>
                                         </div>
                                     </div>
                                     <div class="swiper-slide p-0 rounded-5 overflow-hidden">
                                         <div class="d-flex justify-content-center">
-                                            <img src="image/hknsoc3.jpg" class="img-fluid rounded-5 w-100" alt="image">
+                                            <a href="image/hknsoc3.jpg" data-fancybox="gallery" data-caption="⚠️ Kıkırdak Hasarları Sporcularda Ciddi Riskler Oluşturuyor!
+                                                Spor yaparken dizinizde veya eklemlerinizde ağrı mı hissediyorsunuz? Hareket sırasında takılma, kilitlenme veya şişlik mi var? Kıkırdak hasarı düşündüğünüzden daha ciddi olabilir!
+                                                
+                                                💢 Kıkırdak Hasarının Belirtileri:
+                                                ✅ Eklemlerde ağrı ve sertlik
+                                                ✅ Hareket sırasında takılma veya kilitlenme hissi
+                                                ✅ Şişlik ve ödem
+                                                ✅ Uzun süre hareketsiz kaldıktan sonra eklemde tutulma
+                                                
+                                                🚨 Tedavi edilmezse ne olur?
+                                                İlerleyen kıkırdak hasarı, eklemde geri dönüşü olmayan dejenerasyona yol açabilir ve erken yaşta protez ameliyatı gerektirebilir!
+                                                
+                                                💡 Erken teşhis ve tedavi ile spor hayatınızı güvence altına alın!">
+                                                <img src="image/hknsoc3.jpg" class="img-fluid rounded-5 w-100"
+                                                    alt="Diz Protezi ">
+                                            </a>
                                         </div>
                                     </div>
                                     <div class="swiper-slide p-0 rounded-5 overflow-hidden">
                                         <div class="d-flex justify-content-center">
-                                            <img src="image/hknsoc4.jpg" class="img-fluid rounded-5 w-100" alt="image">
+                                            <a href="image/hknsoc4.jpg" data-fancybox="gallery"
+                                                data-caption="🏃‍♂️ Ayak Bileği Burkulmaları ve Tedavisi!
+                                                Yanlış bir adım attınız ve bileğiniz döndü mü? Şişlik, morarma ve ağrı mı başladı? Ayak bileği burkulmaları hafife alınmamalıdır, çünkü doğru tedavi edilmezse kronik hale gelebilir!
+                                                
+                                                💢 Belirtiler:
+                                                ✅ Bilekte ani ağrı ve hassasiyet
+                                                ✅ Şişlik ve morarma
+                                                ✅ Üzerine basmakta zorlanma
+                                                ✅ Hareket sırasında instabilite (gevşeklik hissi)
+                                                
+                                                🔹 İlk Müdahale (R.I.C.E Protokolü):
+                                                🧊 Rest (Dinlenme): Yaralanan bileği zorlamayın.
+                                                🧊 Ice (Buz): 15-20 dakika buz uygulayın (direkt cilde temas ettirmeyin).
+                                                🧊 Compression (Sargı): Hafif baskılı bandaj ile destekleyin.
+                                                🧊 Elevation (Yüksekte Tutma): Şişliği azaltmak için ayağınızı yukarı kaldırın.
+                                                
+                                                ⚠️ Ne Zaman Doktora Gitmelisiniz?
+                                                ✔️ Ağrı şiddetliyse ve üzerine basamıyorsanız
+                                                ✔️ Şişlik ve morarma birkaç gün içinde azalmıyorsa
+                                                ✔️ Bileğinizde sürekli bir gevşeklik hissediyorsanız
+                                                
+                                                ✨ Fizik tedavi ve özel egzersizlerle ayak bileğinizi güçlendirmek mümkün!">
+                                                <img src="image/hknsoc4.jpg" class="img-fluid rounded-5 w-100"
+                                                    alt="Ayak Bileği Burkulmaları ve Tedavisi">
+                                            </a>
                                         </div>
                                     </div>
                                     <div class="swiper-slide p-0 rounded-5 overflow-hidden">
                                         <div class="d-flex justify-content-center">
-                                            <img src="image/hknsoc5.jpg" class="img-fluid rounded-5 w-100" alt="image">
+                                            <a href="image/hknsoc5.jpg" data-fancybox="gallery"
+                                                data-caption="🦴 Eklem Çıkıkları: Bilmeniz Gerekenler!
+                                                Eklem çıkıkları, ciddi yaralanmalara yol açabilecek acil durumlardır! Doğru müdahale edilmezse kalıcı eklem hasarlarına neden olabilir.
+                                                
+                                                💢 Eklem Çıkığı Nedir?
+                                                Kemiklerin eklem içindeki normal konumundan çıkması durumudur. Genellikle düşme, darbe veya yanlış hareket sonucu oluşur.
+                                                
+                                                ⚠️ Belirtiler:
+                                                ✅ Şiddetli ağrı ve hareket kısıtlılığı
+                                                ✅ Eklemin anormal pozisyonda olması
+                                                ✅ Şişlik ve morarma
+                                                ✅ Uyuşma veya karıncalanma hissi
+                                                
+                                                🚨 İlk Müdahale:
+                                                ❌ Çıkığı kendiniz yerine oturtmaya çalışmayın!
+                                                ❌ Ani hareketlerden kaçının!
+                                                ✅ Yaralanan bölgeyi hareketsiz tutun.
+                                                ✅ Buz uygulayarak şişliği azaltın.
+                                                ✅ En kısa sürede bir uzmana başvurun!
+                                                
+                                                🔹 Tedavi ve Rehabilitasyon:
+                                                ✔️ Çıkık yerine oturtulduktan sonra iyileşme sürecinde fizik tedavi önerilir.
+                                                ✔️ Tekrarlayan çıkıkları önlemek için eklemi güçlendiren egzersizler yapılmalıdır.">
+                                                <img src="image/hknsoc5.jpg" class="img-fluid rounded-5 w-100"
+                                                    alt="Eklem Çıkıkları: Bilmeniz Gerekenler!">
+                                            </a>
                                         </div>
                                     </div>
                                     <div class="swiper-slide p-0 rounded-5 overflow-hidden">
                                         <div class="d-flex justify-content-center">
-                                            <img src="image/hknsoc6.jpg" class="img-fluid rounded-5 w-100" alt="image">
+                                            <a href="image/hknsoc6.jpg" data-fancybox="gallery" data-caption="Ortopedik Travmalara Karşı Önlem Alın!
+                                                Kazalar, düşmeler ve darbeler ortopedik travmalara yol açabilir! Doğru müdahale edilmezse ciddi sakatlıklar bırakabilir. Peki, ortopedik travmalarda ilk müdahale nasıl olmalı?
+                                                
+                                                💢 Ortopedik Travmaların En Yaygın Nedenleri:
+                                                ✅ Düşmeler ve çarpışmalar
+                                                ✅ Spor yaralanmaları
+                                                ✅ Trafik kazaları
+                                                ✅ Kemik ve eklemlere alınan darbeler
+                                                
+                                                🚨 İlk Müdahale Nasıl Olmalı?
+                                                1️⃣ Hareketsiz Tutun 🛑
+                                                🔹 Yaralanan bölgeyi hareket ettirmeyin.
+                                                🔹 Kırık şüphesi varsa destekleyici bir malzeme ile sabitleyin.
+                                                
+                                                2️⃣ Şişlik ve Ağrıyı Azaltın 🧊
+                                                🔹 Yaralanan bölgeye 15-20 dakika buz uygulayın.
+                                                🔹 Şişliği önlemek için bölgeyi yüksekte tutun.
+                                                
+                                                3️⃣ Kanama Varsa Durdurun 🩸
+                                                🔹 Temiz bir bezle basınç uygulayın.
+                                                🔹 Kesik veya açık yara varsa enfeksiyon riskine karşı kapatın.
+                                                
+                                                4️⃣ Üzerine Basmayın veya Zorlamayın 🚷
+                                                🔹 Kemik veya eklemde anormal bir şekil varsa üzerine basmayın ve bir sağlık profesyoneline danışın.
+                                                
+                                                ⚠️ Ne Zaman Doktora Gitmelisiniz?
+                                                ✔️ Şiddetli ağrı ve hareket kaybı varsa
+                                                ✔️ Eklemlerinizde şekil bozukluğu oluşmuşsa
+                                                ✔️ Morarma, şişlik ve uyuşma hissi devam ediyorsa
+                                                ">
+                                                <img src="image/hknsoc6.jpg" class="img-fluid rounded-5 w-100"
+                                                    alt="Ortopedik Travmalara Karşı Önlem Alın!">
+                                            </a>
                                         </div>
                                     </div>
                                     <div class="swiper-slide p-0 rounded-5 overflow-hidden">
                                         <div class="d-flex justify-content-center">
-                                            <img src="image/hknsoc7.jpg" class="img-fluid rounded-5 w-100" alt="image">
+                                            <a href="image/hknsoc7.jpg" data-fancybox="gallery"
+                                                data-caption="Spor Yaralanmaları ve Tedavisi!
+                                                Erken müdahale = Hızlı iyileşme!
+                                                
+                                                Spor yaparken yaşanan sakatlıklar, sadece performansınızı değil, günlük hayatınızı da olumsuz etkileyebilir.
+                                                Ama endişelenmeyin! Kas, bağ, tendon ve eklem yaralanmalarında hızlı ve etkili tedaviyle spor hayatınıza kaldığınız yerden dönebilirsiniz!
+                                                
+                                                💢 Sık Görülen Spor Yaralanmaları:
+                                                
+                                                Diz ve ayak bileği burkulmaları
+                                                Kas yırtıkları
+                                                Menisküs ve bağ yaralanmaları
+                                                Omuz sıkışması ve tendinitler
+                                                ⚡️ Tedavi Yaklaşımımız:
+                                                
+                                                Doğru teşhis
+                                                Kişiye özel egzersiz ve fizik tedavi planı
+                                                Gerekirse artroskopik müdahaleler
+                                                Unutmayın:
+                                                Erken müdahale ile hem iyileşme süresi kısalır hem de tekrar sakatlanma riski azalır!">
+                                                <img src="image/hknsoc7.jpg" class="img-fluid rounded-5 w-100"
+                                                    alt="Spor Yaralanmaları ve Tedavisi!">
+                                            </a>
                                         </div>
                                     </div>
                                 </div>
                             </div>
                             <!-- Navigation arrows (on top of everything) -->
-                            <div class="swiper-button-next" style="z-index: 3;"></div>
+                            <div class="swiper-button-next"></div>
                         </div>
                     </div>
                     <div class="col mb-3">
@@ -245,7 +448,7 @@
         </div>
 
         <!-- Section Counter -->
-        <div class="section pt-0 floating-counter">
+        <div class="section pt-0 floating-counter" style="z-index: -1;">
             <div
                 class="r-container d-flex align-items-center mx-auto justify-content-center bg-accent border rounded-5">
                 <div class="row row-cols-xl-3 row-cols-1 w-100 p-5">
@@ -754,6 +957,48 @@
     <a href="https://wa.me/905322777401" class="whatsapp-float" target="_blank">
         <i class="fa-brands fa-whatsapp"></i>
     </a>
+
+    <script>
+        Fancybox.bind("[data-fancybox]", {
+            // Custom options
+            Thumbs: {
+                autoStart: true,
+            },
+            Toolbar: {
+                display: {
+                    left: [],
+                    middle: [],
+                    right: ["close"],
+                },
+            },
+            caption: function (fancybox, slide) {
+                const caption = slide.caption || '';
+                if (caption.includes('⚠️')) {
+                    const sections = caption.split('\n\n');
+                    const title = sections[0];
+                    const content = sections.slice(1);
+
+                    let html = `<h3>${title}</h3><div class="caption-content">`;
+
+                    content.forEach(section => {
+                        if (section.includes('💢') || section.includes('🚨') || section.includes('💡')) {
+                            const [header, ...lines] = section.split('\n');
+                            html += `<div class="caption-section">
+                                <h4>${header}</h4>
+                                <p>${lines.join('<br>')}</p>
+                            </div>`;
+                        } else {
+                            html += `<p>${section}</p>`;
+                        }
+                    });
+
+                    html += '</div>';
+                    return html;
+                }
+                return caption;
+            }
+        });
+    </script>
 </body>
 
 </html>
