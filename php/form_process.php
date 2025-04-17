@@ -7,7 +7,7 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
         $headers = "From: $email\r\n";
         $headers .= "Reply-To: $email\r\n";
         $headers .= "Content-type: text/html\r\n";
-        $message = "Subscribe Email " . $email; // Replace Your Message Subscribe
+        $message = "Subscribe Email " . $email; // Replacwe Your Message Subscribe
 
         $messageBody = "Email: $email<br>Message: $message";
 
