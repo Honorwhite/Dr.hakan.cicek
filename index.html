@@ -79,6 +79,12 @@
             font-size: 14px;
         }
     </style>
+
+    <!-- Preload critical assets -->
+    <link rel="preload" href="image/vidcover.jpg" as="image">
+    <link rel="preload" href="css/style.css" as="style">
+    <link rel="preconnect" href="https://cdnjs.cloudflare.com">
+    <link rel="preconnect" href="https://cdn.jsdelivr.net">
 </head>
 
 <body>
@@ -133,7 +139,9 @@
         <!-- Banner -->
         <div class="section pt-0 position-relative">
             <div class="mx-auto" style="max-width: 1770px;">
-                <img src="image/vidcover.jpg" class="img-fluid rounded-4 w-100" style="height: 80vh;" alt="">
+                <img src="image/vidcover.jpg" class="img-fluid rounded-4 w-100"
+                    style="max-height: 80vh; object-fit: cover;" alt="Banner Image" loading="eager" decoding="async"
+                    fetchpriority="high">
             </div>
             <div class="r-container overflow-visible floating-banner">
                 <div class="d-flex flex-xl-row flex-column gap-3">
@@ -448,7 +456,7 @@
         </div>
 
         <!-- Section Counter -->
-        <div class="section pt-0 floating-counter" style="z-index: -1;">
+        <div class="section pt-0 floating-counter" style="z-index: 1;">
             <div
                 class="r-container d-flex align-items-center mx-auto justify-content-center bg-accent border rounded-5">
                 <div class="row row-cols-xl-3 row-cols-1 w-100 p-5">
@@ -532,7 +540,7 @@
                 <div class="swiper mySwiper w-100 pulse scrollanimation animated">
                     <div class="swiper-wrapper">
                         <div class="swiper-slide class-course" data-courses="all,course5">
-                            <a href="sporyaralanmalari.html">
+                            <a href="omuzveayakbilegi.html">
                                 <div class="card class-card card-overlay gap-3">
                                     <div class="card-image overflow-hidden rounded-4 position-relative">
                                         <img src="image/bilek_yaralanmasi.jpg" alt="" class="img-fluid">
@@ -578,7 +586,7 @@
                             </a>
                         </div>
                         <div class="swiper-slide class-course" data-courses="all,course3">
-                            <a href="sporyaralanmalari.html">
+                            <a href="dizbagyaralanmalari.html">
                                 <div class="card class-card card-overlay gap-3">
                                     <div class="card-image overflow-hidden rounded-4 position-relative">
                                         <img src="image/diz_yaralanmasi.jpg" alt="" class="img-fluid">
@@ -601,7 +609,7 @@
                             </a>
                         </div>
                         <div class="swiper-slide class-course" data-courses="all,course5">
-                            <a href="sporyaralanmalari.html">
+                            <a href="primerprotez.html">
                                 <div class="card class-card card-overlay gap-3">
                                     <div class="card-image overflow-hidden rounded-4 position-relative">
                                         <img src="image/omuz_yaralanmasi.jpg" alt="" class="img-fluid">
@@ -624,7 +632,7 @@
                             </a>
                         </div>
                         <div class="swiper-slide class-course" data-courses="all,course4">
-                            <a href="sporyaralanmalari.html">
+                            <a href="omurgacerrahisi.html">
                                 <div class="card class-card card-overlay gap-3">
                                     <div class="card-image overflow-hidden rounded-4 position-relative">
                                         <img src="image/omurga_tedavisi.jpg" alt="" class="img-fluid">
@@ -647,7 +655,7 @@
                             </a>
                         </div>
                         <div class="swiper-slide class-course" data-courses="all,course4">
-                            <a href="sporyaralanmalari.html">
+                            <a href="ortopediktravma.html">
                                 <div class="card class-card card-overlay gap-3">
                                     <div class="card-image overflow-hidden rounded-4 position-relative">
                                         <img src="image/ortopedik_tedavi.jpg" alt="" class="img-fluid">

@@ -26,6 +26,12 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.7.0/animate.min.css">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/shishirraven/animate-on-scroll@v1.2/animation_utility.css">
     <link rel="icon" type="image/x-icon" href="image/logo.png">
+    <script src="https://www.google.com/recaptcha/api.js?render=6LfcyRsrAAAAAI_sUBUx-2EzTd6mDzB81ce6ZiI3"></script>
+    <style>
+        .grecaptcha-badge {
+            visibility: hidden;
+        }
+    </style>
     <title>Prof. Dr. Hakan Çiçek - Adana Medical Park Seyhan Hastanesi | İletişim</title>
 </head>
 
@@ -387,33 +393,39 @@
                     return;
                 }
 
-                // Form verilerini API'nin beklediği alan adlarıyla eşleştirme
-                const formData = {
-                    adSoyad: $('#name').val(),
-                    telefon: $('#phone').val(),
-                    email: $('#email').val(),
-                    talepTuru: $('#treatment').val(),
-                    tarih: $('#preferred_date').val(),
-                    saat: $('#preferred_time').val(),
-                    sikayet: $('#symptoms').val()
-                };
+                // Get reCAPTCHA token
+                grecaptcha.ready(function () {
+                    grecaptcha.execute('6LfcyRsrAAAAAI_sUBUx-2EzTd6mDzB81ce6ZiI3', { action: 'submit' }).then(function (token) {
+                        // Form verilerini API'nin beklediği alan adlarıyla eşleştirme
+                        const formData = {
+                            adSoyad: $('#name').val(),
+                            telefon: $('#phone').val(),
+                            email: $('#email').val(),
+                            talepTuru: $('#treatment').val(),
+                            tarih: $('#preferred_date').val(),
+                            saat: $('#preferred_time').val(),
+                            sikayet: $('#symptoms').val(),
+                            captcha: token
+                        };
 
-                // jQuery ile API'ye POST isteği gönderme
-                $.ajax({
-                    url: 'https://randevu-backend.vercel.app/api/randevu',
-                    type: 'POST',
-                    contentType: 'application/json',
-                    data: JSON.stringify(formData),
-                    success: function(response) {
-                        successToastInstance.show();
-                        form.reset();
-                        form.classList.remove('was-validated');
-                    },
-                    error: function(xhr, status, error) {
-                        console.error('Hata:', error);
-                        errorToast.querySelector('.toast-body').textContent = 'Bir hata oluştu! Lütfen daha sonra tekrar deneyiniz.';
-                        errorToastInstance.show();
-                    }
+                        // jQuery ile API'ye POST isteği gönderme
+                        $.ajax({
+                            url: 'https://randevu-backend.vercel.app/api/randevu',
+                            type: 'POST',
+                            contentType: 'application/json',
+                            data: JSON.stringify(formData),
+                            success: function (response) {
+                                successToastInstance.show();
+                                form.reset();
+                                form.classList.remove('was-validated');
+                            },
+                            error: function (xhr, status, error) {
+                                console.error('Hata:', error);
+                                errorToast.querySelector('.toast-body').textContent = 'Bir hata oluştu! Lütfen daha sonra tekrar deneyiniz.';
+                                errorToastInstance.show();
+                            }
+                        });
+                    });
                 });
             });
         });
