@@ -107,6 +107,100 @@
         .fancybox__caption .caption-content .caption-section p {
             font-size: 14px;
         }
+
+        /* Banner Slider Styles */
+        .bannerSwiper {
+            width: 100%;
+            height: 100%;
+            position: relative;
+            z-index: 1;
+        }
+
+        .bannerSwiper .swiper-slide {
+            width: 100%;
+            height: 100%;
+        }
+
+        .bannerSwiper .swiper-slide picture {
+            width: 100%;
+            height: 100%;
+            display: block;
+        }
+
+        .bannerSwiper .swiper-slide img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        @media (max-width: 768px) {
+            .bannerSwiper .swiper-slide img {
+                max-height: 60vh;
+                /* Mobilde daha kısa görsel */
+            }
+        }
+
+        .bannerSwiper .swiper-pagination {
+            bottom: 20px;
+            z-index: 2;
+        }
+
+        .bannerSwiper .swiper-pagination-bullet {
+            width: 12px;
+            height: 12px;
+            background: #fff;
+            opacity: 0.5;
+        }
+
+        .bannerSwiper .swiper-pagination-bullet-active {
+            opacity: 1;
+            background: #FF9700;
+        }
+
+        .bannerTextSwiper {
+            width: 100%;
+            position: relative;
+            z-index: 3;
+        }
+
+        .bannerTextSwiper .swiper-slide {
+            opacity: 0;
+            transition: opacity 0.5s ease;
+        }
+
+        .bannerTextSwiper .swiper-slide-active {
+            opacity: 1;
+        }
+
+        .bannerTextSwiper .p-banner {
+            margin-top: 20px;
+            font-size: 1.2rem;
+            line-height: 1.6;
+        }
+
+        .floating-banner {
+            position: relative;
+            z-index: 3;
+        }
+
+        .floating-heading {
+            position: relative;
+            z-index: 3;
+        }
+
+        .section.pt-0.position-relative {
+            position: relative;
+        }
+
+        .section.pt-0.position-relative::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            z-index: 2;
+        }
     </style>
 
     <!-- Preload critical assets -->
@@ -136,7 +230,7 @@
                                 <a class="nav-link active" aria-current="page" href="index.html">Anasayfa</a>
                             </li>
                             <li class="nav-item">
-                                <a class="nav-link" aria-current="page" href="hakkinda.html">Hakkımızda</a>
+                                <a class="nav-link" aria-current="page" href="hakan_cicek.html">Hakkımızda</a>
                             </li>
 
                             <li class="nav-item">
@@ -144,10 +238,13 @@
                                     Alanlarımız</a>
                             </li>
                             <li class="nav-item">
-                                <a class="nav-link" href="contact.html">İletişim</a>
+                                <a class="nav-link" href="iletisim.html">İletişim</a>
                             </li>
                             <li class="nav-item">
                                 <a class="nav-link" href="blog.html">Blog</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="makaleler.html">Yayınlar</a>
                             </li>
                         </ul>
                         <div class="mb-xl-0 mb-3">
@@ -167,34 +264,95 @@
     <main>
         <!-- Banner -->
         <div class="section pt-0 position-relative">
-            <div class="mx-auto" style="max-width: 1770px;">
-                <img src="image/vidcover.jpg" class="img-fluid rounded-4 w-100"
-                    style="max-height: 80vh; object-fit: cover;" alt="Banner Image" loading="eager" decoding="async"
-                    fetchpriority="high">
+            <div class="mx-auto" style="max-width: 1770px">
+                <div class="swiper bannerSwiper">
+                    <div class="swiper-wrapper">
+                        <div class="swiper-slide">
+                            <picture>
+                                <source media="(max-width: 768px)" srcset="image/hakan_cicek_mobil.jpg">
+                                <img src="image/hakan_cicek.jpg" class="img-fluid rounded-4 w-100"
+                                    style="max-height: 80vh; object-fit: cover;" alt="Banner Image" loading="eager"
+                                    decoding="async" fetchpriority="high">
+                            </picture>
+                        </div>
+                        <div class="swiper-slide">
+                            <picture>
+                                <source media="(max-width: 768px)" srcset="image/hakan_cicek_mobil.jpg">
+                                <img src="image/hakan_cicek.jpg" class="img-fluid rounded-4 w-100"
+                                    style="max-height: 80vh; object-fit: cover;" alt="Banner Image">
+                            </picture>
+                        </div>
+                        <div class="swiper-slide">
+                            <picture>
+                                <source media="(max-width: 768px)" srcset="image/hakan_cicek_mobil.jpg">
+                                <img src="image/hakan_cicek.jpg" class="img-fluid rounded-4 w-100"
+                                    style="max-height: 80vh; object-fit: cover;" alt="Banner Image">
+                            </picture>
+                        </div>
+                    </div>
+                    <div class="swiper-pagination"></div>
+                </div>
             </div>
             <div class="r-container overflow-visible floating-banner">
                 <div class="d-flex flex-xl-row flex-column gap-3">
-                    <div class="col col-xl-7 scrollanimation animated fadeInLeft">
+                    <div class="col col-xl-7 scrollanimation animated fadeInLeft d-none d-xl-flex">
                         <div
                             class="d-flex flex-column  text-xl-start text-center gap-3 bg-accent p-5 rounded-4 floating-heading">
                             <div class="d-flex flex-row gap-2 align-items-center">
                                 <img src="image/cuida_medicine-outline.png" class="img-fluid" alt="">
-                                <h6 class="accent-color m-0">Prof. Dr. Hakan Çiçek</h6>
+                                <p class="accent-color m-0">Prof. Dr. Hakan Çiçek</p>
                             </div>
-                            <h1>Omuz Sıkışması Sendromu</h1>
+                            <h1>Adana Ortopedi ve Travmatoloji Uzmanı</h1>
                         </div>
                     </div>
                     <div class="col col-xl-5 scrollanimation animated fadeInRight">
                         <div
                             class="d-flex flex-column align-items-xl-start align-items-center text-xl-start text-center gap-xl-5 gap-3 ps-xl-3 pe-xl-5 pe-0">
-                            <a href="https://youtube.com/shorts/4f489mhA42k" data-fancybox class="video-btn">
-                                <button class="request-loader">
-                                    <i class="fa-solid fa-play ms-1"></i>
-                                </button>
-                            </a>
-                            <p class="p-banner">
-                                Omuz Sıkışma Sendromu: Farkında Olmadan Omzunuza Zarar Veriyor Olabilirsiniz! <br> <br>
-                            </p>
+                            <div class="swiper bannerTextSwiper">
+                                <div class="swiper-wrapper">
+                                    <div class="swiper-slide">
+                                        <a href="https://www.youtube.com/shorts/MLjdyuRRvjE" data-fancybox
+                                            class="video-btn">
+                                            <button class="request-loader">
+                                                <i class="fa-solid fa-play ms-1"></i>
+                                            </button>
+                                        </a>
+                                        <p class="p-banner">
+                                            Eklem Kireçlenmesi Neden Olur ? Yaşla ilgisi nedir sizler için cevapladık!
+                                        </p>
+                                    </div>
+                                    <div class="swiper-slide">
+                                        <a href="https://www.youtube.com/shorts/5q_H0b5xo6o" data-fancybox
+                                            class="video-btn">
+                                            <button class="request-loader">
+                                                <i class="fa-solid fa-play ms-1"></i>
+                                            </button>
+                                        </a>
+                                        <p class="p-banner">
+                                            Patella (Diz Kapağı) Neden Çıkar? </p>
+                                    </div>
+                                    <div class="swiper-slide">
+                                        <a href="https://www.youtube.com/shorts/epZQL_QXB7U" data-fancybox
+                                            class="video-btn">
+                                            <button class="request-loader">
+                                                <i class="fa-solid fa-play ms-1"></i>
+                                            </button>
+                                        </a>
+                                        <p class="p-banner">
+                                            Rotator Manşet Cerrahisi ve Superior Kapsuler Rekonstruksiyon Cerrahisi </p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col col-xl-7 scrollanimation animated fadeInLeft d-xl-none">
+                                <div
+                                    class="d-flex flex-column  text-xl-start text-center gap-3 bg-accent p-5 rounded-4 floating-heading">
+                                    <div class="d-flex flex-row gap-2 align-items-center">
+                                        <img src="image/cuida_medicine-outline.png" class="img-fluid" alt="">
+                                        <p class="accent-color m-0">Prof. Dr. Hakan Çiçek</p>
+                                    </div>
+                                    <h1>Adana Ortopedi ve Travmatoloji Uzmanı</h1>
+                                </div>
+                            </div>
                             <div
                                 class="d-flex flex-xl-row flex-column align-items-xl-start align-items-center gap-3 mt-3">
                                 <div class="d-flex flex-row gap-1 align-items-center">
@@ -432,7 +590,7 @@
                                 <div class="r-progress w-100" style="--value:100;">
                                     <h5>Her zaman ulaşılabilir, hızlı ve güvenilir sağlık hizmeti.</h5>
                                     <div class="progress-container mt-2">
-                                        <div class="r-progress-bar percentage-label">
+                                        <div class="r-progress-bar">
                                             <div class="progress-value"></div>
                                         </div>
                                     </div>
@@ -440,7 +598,7 @@
                                 <div class="r-progress w-100" style="--value:100;">
                                     <h5>Yenilikçi Yaklaşım ve Sürekli Gelişim</h5>
                                     <div class="progress-container mt-2">
-                                        <div class="r-progress-bar percentage-label">
+                                        <div class="r-progress-bar">
                                             <div class="progress-value"></div>
                                         </div>
                                     </div>
@@ -448,7 +606,7 @@
                                 <div class="r-progress w-100" style="--value:100;">
                                     <h5>Sağlıkta Uluslararası Güven</h5>
                                     <div class="progress-container mt-2">
-                                        <div class="r-progress-bar percentage-label">
+                                        <div class="r-progress-bar">
                                             <div class="progress-value"></div>
                                         </div>
                                     </div>
@@ -541,7 +699,7 @@
                     </div>
                     <div class="col mb-3 d-flex justify-content-end">
                         <div class="w-max-content">
-                            <a href="contact.html" class="btn btn-accent rounded-pill d-flex flex-row gap-2 px-5 py-3">
+                            <a href="iletisim.html" class="btn btn-accent rounded-pill d-flex flex-row gap-2 px-5 py-3">
                                 <span>Bizimle İletişime Geçin!</span>
                             </a>
                         </div>
@@ -818,7 +976,7 @@
                 </div>
             </div>
 
-            <!-- Blog -->
+            <!-- Videos -->
             <div class="section">
                 <div class="r-container d-flex flex-column gap-4">
                     <div class="d-flex flex-column gap-3 align-items-center justify-content-center text-center mx-auto scrollanimation animated zoomIn"
@@ -829,54 +987,46 @@
                         </div>
                         <h3>Diğer Videolarımıza Da Göz Atın!</h3>
                     </div>
-                    <div class="row row-cols-xl-2 row-cols-1">
+                    <div class="row row-cols-xl-3 row-cols-1">
                         <div class="col mb-3 scrollanimation animated fadeInLeft">
                             <div class="card d-flex flex-column gap-3 h-100">
                                 <div class="position-relative overflow-hidden rounded-3 h-100">
-                                    <img src="image/omuz.jpg" alt="image" class="img-fluid h-100">
-                                    <div class="blog-overlay"></div>
-                                    <div class="position-absolute bottom-0 left-0 text-white p-5">
-                                        <div class="d-flex flex-row gap-2 justify-content-between align-items-end">
-                                            <div class="d-flex flex-column gap-3">
-                                                <div class="px-4 py-2 border border-light rounded-pill w-max-content">
-                                                    <span class="text-white">Prof. Dr. Hakan Çiçek</span>
-                                                </div>
-                                                <h5>Omuz Sıkışması Sendromu
-                                                </h5>
-                                            </div>
-                                            <a href="https://youtube.com/shorts/4f489mhA42k" data-fancybox
-                                                class="video-btn">
-                                                <button class="request-loader">
-                                                    <i class="fa-solid fa-play ms-1"></i>
-                                                </button>
-                                            </a>
-                                        </div>
-                                    </div>
+                                    <img src="image/Kapak/rotator_manset.jpg" alt="Rotator Manşet Cerrahisi"
+                                        class="img-fluid h-100 w-100" style="object-fit: cover; aspect-ratio: 9/16;">
+                                    <a href="https://www.youtube.com/shorts/epZQL_QXB7U" data-fancybox
+                                        class="video-btn position-absolute bottom-0 end-0 m-4">
+                                        <button class="request-loader">
+                                            <i class="fa-solid fa-play ms-1"></i>
+                                        </button>
+                                    </a>
                                 </div>
                             </div>
                         </div>
-                        <div class="col mb-3 scrollanimation animated fadeInRight">
+                        <div class="col mb-3 scrollanimation animated fadeInLeft">
                             <div class="card d-flex flex-column gap-3 h-100">
                                 <div class="position-relative overflow-hidden rounded-3 h-100">
-                                    <img src="image/meniskus.jpg" alt="image" class="img-fluid h-100">
-                                    <div class="blog-overlay"></div>
-                                    <div class="position-absolute bottom-0 left-0 text-white p-5">
-                                        <div class="d-flex flex-row gap-2 justify-content-between align-items-end">
-                                            <div class="d-flex flex-column gap-3">
-                                                <div class="px-4 py-2 border border-light rounded-pill w-max-content">
-                                                    <span class="text-white">Prof. Dr. Hakan Çiçek</span>
-                                                </div>
-                                                <h5>Menisküs Yırtılması
-                                                </h5>
-                                            </div>
-                                            <a href="https://youtube.com/shorts/jONMyYdFa78" data-fancybox
-                                                class="video-btn">
-                                                <button class="request-loader">
-                                                    <i class="fa-solid fa-play ms-1"></i>
-                                                </button>
-                                            </a>
-                                        </div>
-                                    </div>
+                                    <img src="image/Kapak/on_capraz_bag.jpg" alt="Ön Çapraz Bağ Revizyon"
+                                        class="img-fluid h-100 w-100" style="object-fit: cover; aspect-ratio: 9/16;">
+                                    <a href="https://www.youtube.com/shorts/_7U7-0mkrA8" data-fancybox
+                                        class="video-btn position-absolute bottom-0 end-0 m-4">
+                                        <button class="request-loader">
+                                            <i class="fa-solid fa-play ms-1"></i>
+                                        </button>
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col mb-3 scrollanimation animated fadeInLeft">
+                            <div class="card d-flex flex-column gap-3 h-100">
+                                <div class="position-relative overflow-hidden rounded-3 h-100">
+                                    <img src="image/Kapak/meniskus_yirtigi.jpg" alt="Menisküs Yırtığı"
+                                        class="img-fluid h-100 w-100" style="object-fit: cover; aspect-ratio: 9/16;">
+                                    <a href="https://www.youtube.com/shorts/jONMyYdFa78k" data-fancybox
+                                        class="video-btn position-absolute bottom-0 end-0 m-4">
+                                        <button class="request-loader">
+                                            <i class="fa-solid fa-play ms-1"></i>
+                                        </button>
+                                    </a>
                                 </div>
                             </div>
                         </div>
@@ -958,7 +1108,7 @@
                             </a>
                         </div>
                         <div>
-                            <a href="hakkinda.html" class="link d-flex flex-row gap-3 align-items-center">
+                            <a href="hakan_cicek.html" class="link d-flex flex-row gap-3 align-items-center">
                                 Hakkımızda
                             </a>
                         </div>
@@ -968,7 +1118,7 @@
                             </a>
                         </div>
                         <div>
-                            <a href="contact.html" class="link d-flex flex-row gap-3 align-items-center">
+                            <a href="iletisim.html" class="link d-flex flex-row gap-3 align-items-center">
                                 İletişim
                             </a>
                         </div>
@@ -977,10 +1127,13 @@
                                 KVKK ve Çerez Politikası
                             </a>
                         </div>
+                        <div>
+                            <a href="https://jasmindigital.com.tr/" style="color: white;"> © 2025 Jasmin Digital </a>
+                        </div>
+                        <div>
+                            <a href="https://jasmindigital.com.tr/" style="color: white;"> © 2025 Jasmin Digital </a>
+                        </div>
                     </div>
-                    <span class="text-white fs-6 font-2">
-                        <a href="https://jasmindigital.com.tr/" style="color: white;"> © 2025 Jasmin Digital </a>
-                    </span>
                 </div>
             </div>
         </div>
@@ -1043,6 +1196,36 @@
                 }
                 return caption;
             }
+        });
+    </script>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            const bannerSwiper = new Swiper('.bannerSwiper', {
+                loop: true,
+                autoplay: {
+                    delay: 4000,
+                    disableOnInteraction: false,
+                },
+                pagination: {
+                    el: '.swiper-pagination',
+                    clickable: true
+                }
+            });
+
+            const bannerTextSwiper = new Swiper('.bannerTextSwiper', {
+                loop: true,
+                autoplay: {
+                    delay: 4000,
+                    disableOnInteraction: false,
+                },
+                allowTouchMove: false
+            });
+
+            // İki slider'ı senkronize et
+            bannerSwiper.on('slideChange', function () {
+                bannerTextSwiper.slideTo(bannerSwiper.realIndex);
+            });
         });
     </script>
 </body>
