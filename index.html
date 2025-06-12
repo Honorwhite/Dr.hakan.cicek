@@ -201,6 +201,38 @@
             bottom: 0;
             z-index: 2;
         }
+
+        /* DoktorTakvimi.com Widget Stilleri */
+        .dt-widget-container {
+            width: 100%;
+            max-width: 800px;
+            margin: 2rem auto;
+            padding: 0 1rem;
+        }
+
+        @media (min-width: 768px) {
+            .dt-widget-container {
+                max-width: 1000px;
+            }
+        }
+
+        @media (min-width: 1200px) {
+            .dt-widget-container {
+                max-width: 1200px;
+            }
+        }
+
+        /* Widget'ın kendisini düzenleme */
+        .zl-widget {
+            width: 100% !important;
+            height: 600px !important;
+        }
+
+        @media (max-width: 767px) {
+            .zl-widget {
+                height: 500px !important;
+            }
+        }
     </style>
 
     <!-- Preload critical assets -->
@@ -1059,6 +1091,13 @@
                 </div>
             </div>
         </div>
+        <div class="dt-widget-container">
+            <a id="zl-url" class="zl-url"
+                href="https://www.doktortakvimi.com/hakan-cicek/ortopedi-ve-travmatoloji/adana" rel="nofollow"
+                data-zlw-doctor="hakan-cicek" data-zlw-type="big" data-zlw-opinion="true" data-zlw-hide-branding="true"
+                data-zlw-saas-only="false" data-zlw-a11y-title="Doktor randevu widgeti">Hakan
+                Çiçek - DoktorTakvimi.com</a>
+        </div>
     </main>
 
     <footer>
@@ -1219,7 +1258,6 @@
             }
         });
     </script>
-
     <script>
         document.addEventListener('DOMContentLoaded', function () {
             const bannerSwiper = new Swiper('.bannerSwiper', {
@@ -1249,6 +1287,8 @@
             });
         });
     </script>
+    <script>!function ($_x, _s, id) { var js, fjs = $_x.getElementsByTagName(_s)[0]; if (!$_x.getElementById(id)) { js = $_x.createElement(_s); js.id = id; js.src = "//platform.docplanner.com/js/widget.js"; fjs.parentNode.insertBefore(js, fjs); } }(document, "script", "zl-widget-s");</script>
+
 </body>
 
 </html>
