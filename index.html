@@ -233,6 +233,177 @@
                 height: 500px !important;
             }
         }
+
+        .testimonial-avatar img {
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+        }
+
+        .testimonialSwiper .card {
+            min-height: 320px;
+            height: 320px;
+            max-height: 320px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            overflow: hidden;
+        }
+
+        @media (max-width: 767px) {
+            .testimonialSwiper .card {
+                min-height: 380px;
+                height: 380px;
+                max-height: 380px;
+            }
+        }
+
+        .testimonial-question-row {
+            display: flex;
+            align-items: flex-start;
+            justify-content: space-between;
+            width: 100%;
+            margin-bottom: 18px;
+        }
+
+        .testimonial-question {
+            font-size: 1.6rem;
+            font-weight: 700;
+            color: #155766;
+            flex: 1;
+            text-align: left;
+        }
+
+        .testimonial-answer {
+            font-size: 1.1rem;
+            color: #4a5a5a;
+            margin: 0;
+            text-align: left;
+            font-weight: 400;
+        }
+
+        .read-more-btn {
+            display: none;
+        }
+
+        @media (max-width: 768px) {
+            .testimonial-answer {
+                overflow: hidden;
+                position: relative;
+                max-height: 100px;
+                transition: max-height 0.3s ease-out;
+            }
+
+            .testimonial-answer.expanded {
+                max-height: 1000px;
+                transition: max-height 0.5s ease-in;
+            }
+
+            .testimonial-answer::after {
+                content: '';
+                position: absolute;
+                bottom: 0;
+                left: 0;
+                width: 100%;
+                height: 40px;
+                background: linear-gradient(transparent, #d9eaed);
+            }
+
+            .testimonial-answer.expanded::after {
+                display: none;
+            }
+
+            .read-more-btn {
+                background: none;
+                border: none;
+                color: #155766;
+                font-weight: 600;
+                cursor: pointer;
+                padding: 5px 10px;
+                margin-top: 10px;
+                text-decoration: underline;
+                margin: 10px auto;
+                display: block;
+            }
+        }
+
+        .testimonialSwiper {
+            position: relative;
+        }
+
+        .navigation-container {
+            position: absolute;
+            bottom: 10px;
+            left: 0;
+            right: 0;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 0 20px;
+        }
+
+        .navigation-buttons {
+            display: flex;
+            gap: 10px;
+        }
+
+        .custom-swiper-button {
+            position: relative !important;
+            top: auto !important;
+            left: auto !important;
+            right: auto !important;
+            bottom: auto !important;
+            margin: 0 !important;
+            color: #155766 !important;
+            background: white;
+            width: 40px !important;
+            height: 40px !important;
+            border-radius: 50%;
+            box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+        }
+
+        .custom-swiper-button::after {
+            font-size: 18px !important;
+            font-weight: bold;
+        }
+
+        .testimonialSwiper .swiper-pagination {
+            bottom: 25px;
+        }
+
+        .testimonialSwiper .swiper-pagination-bullet {
+            width: 10px;
+            height: 10px;
+            background: #155766;
+            opacity: 0.5;
+        }
+
+        .testimonialSwiper .swiper-pagination-bullet-active {
+            opacity: 1;
+            background: #155766;
+        }
+
+        @media (max-width: 700px) {
+            .testimonial-question {
+                font-size: 1.1rem;
+            }
+
+            .custom-swiper-button {
+                width: 35px !important;
+                height: 35px !important;
+            }
+
+            .custom-swiper-button::after {
+                font-size: 16px !important;
+            }
+
+            .navigation-container {
+                padding: 0 10px;
+            }
+        }
+
+        .checked {
+            color: #004551;
+        }
     </style>
 
     <!-- Preload critical assets -->
@@ -754,6 +925,406 @@
                 </div>
             </div>
         </div>
+        <!-- Hasta Yorumları Bölümü -->
+        <div class="section" style="background: #d9eaed; margin: 5%; border-radius: 25px;">
+            <div class="r-container d-flex flex-column gap-4 align-items-center">
+                <div class="d-flex flex-column gap-2 text-center mx-auto align-items-center" style="max-width: 650px;">
+
+                    <p class="font-2"
+                        style="font-size: 2.2rem; font-weight: 700; color: #155766; text-align: center; width: 100%; margin-bottom: 0.5rem;">
+                        Hastalarımız Ne Diyor?</p>
+                </div>
+                <div class="swiper testimonialSwiper w-100" style="padding-bottom: 30px; position: relative;">
+                    <div class="swiper-wrapper" style="padding-bottom: 30px;">
+                        <div class="swiper-slide">
+                            <div class="testimonial-question-row">
+                                <span class="testimonial-question">C....</span> <span class="fa fa-star checked"></span>
+                                <span class="fa fa-star checked"></span>
+                                <span class="fa fa-star checked"></span>
+                                <span class="fa fa-star checked"></span>
+                                <span class="fa fa-star checked"></span>
+                            </div>
+                            <p class="testimonial-answer">Dizimden YTO (yüksek tibial osteotomi) amaliyatı olduktan
+                                sonra çapraz bağlarda gevşeme, menüsküs yırtığı ve diz kapağının kaymasıyla ilgili
+                                amaliyat için doktorum Hakan Bey'e yönlendirdi. Hakan Bey bu konulara; ilk yaptığı
+                                amaliyatta müdahale etti ve sonra aynı dizimin açışı kemik eğriliğinden dolayı tam
+                                açılmadiğı için dizimin farklı bölgesinden ikinci YTO amaliyatımı bu defa ilgisinden
+                                dolayı Hakan Beyin yapmasını istedim ve YTO amaliyatımıda gerçekleştirdi.Hakan Beyin
+                                gerçekleştirdiği iki amaliyatıda başarılı oldu, süreç takibi ve amaliyat sonrası
+                                ilgisinden çok memlun kaldık.Hakan Beyi hastaları çok defa önermişlerdi fakat süreçten
+                                bu kadar memlun Kalacağımızı hiç düşünmemiştik .Olumsuz yorum yapan hiçbir hastasını
+                                görnedim.Yanında ki hemşire hanım da çok ilgiliydi 7/24 her saat iletişim
+                                kurabildik(amaliyattayken telefona cevap veremiyor ama müsaitlikte ulaşılabiliyor).Süreç
+                                takiplerinden ve amaliyatta ellerinden geleni sonuna kadar yaptıkları için çok memlun
+                                kaldım.Çok naifler..</p>
+                            <button class="read-more-btn">Devamını Oku</button>
+                        </div>
+                        <div class="swiper-slide">
+                            <div class="testimonial-question-row">
+                                <span class="testimonial-question">me.... </span> <span
+                                    class="fa fa-star checked"></span>
+                                <span class="fa fa-star checked"></span>
+                                <span class="fa fa-star checked"></span>
+                                <span class="fa fa-star checked"></span>
+                                <span class="fa fa-star checked"></span>
+                            </div>
+                            <p class="testimonial-answer">Annemin omzu için herkes ameliyat demişti. Hakan hoca'ya
+                                götürdüm. Bu ameliyatsız kısa sürede iyileşir dedi ve dediği gibi de oldu. Benim de
+                                omzumda sorun var onu da çok basit bir şekilde çözeceğini söyledi. Kendisi doktordan
+                                ziyade tam bir alim, bilim adamı dersek daha yerinde olur. kibarlık ve samimiyet Zirve,
+                                diyaloğa girdiğin an tedavi olacağına inanıyorsun zaten. Çevremde ortopedik bir sorunu
+                                olan olduğu zaman hiç arayışa girmesine bile gerek olmadığını söylüyorum bu herkes için
+                                de geçerli. Ayrıca hemşire hanım için de ayrı bir parantez açmak istiyorum. Böyle bir
+                                hemşire görmedim ki ilgili,alakalı ve beraber çalıştığı hocası nın branşına çok
+                                hakim,cok bilgili. . Hatta başka sıkıntınız varsa doktor tercihiniz konusunda da
+                                yardımcı oluyor o kadar kendini yetiştirmiş, eğitimli, sevecen ,güleryüzlü...Tanırsanız
+                                ikisine de hayran kalmamak elde değil terapi uzmanı gibiler. Hocamı da hemşire hanımıda
+                                tanımak benim için büyük bir şerefti. Her ikisinden de Allah razı olsun saygılarımla...
+                            </p>
+                            <button class="read-more-btn">Devamını Oku</button>
+                        </div>
+                        <div class="swiper-slide">
+                            <div class="testimonial-question-row">
+                                <span class="testimonial-question">i̇...Y... </span> <span
+                                    class="fa fa-star checked"></span>
+                                <span class="fa fa-star checked"></span>
+                                <span class="fa fa-star checked"></span>
+                                <span class="fa fa-star checked"></span>
+                                <span class="fa fa-star checked"></span>
+                            </div>
+                            <p class="testimonial-answer">Hocamızdan önce uzaktan Menüsküs yırtığı ile ilgili destek
+                                aldım ardından 750 km yol gidip Menüsküs ve kıkırdak kırığının temizlenmesi ile ilgili
+                                cerrahi bir müdahale hizmeti almış oldum. Verdiği bilgiler ile tatminkar ve yaptığı
+                                müdahaleler ile de kesinlikle çok başarılı ve harika sonuç aldım. Şiddetle tavsiye
+                                ederim.</p>
+                            <button class="read-more-btn">Devamını Oku</button>
+                        </div>
+                        <div class="swiper-slide">
+                            <div class="testimonial-question-row">
+                                <span class="testimonial-question">Ha... </span> <span
+                                    class="fa fa-star checked"></span>
+                                <span class="fa fa-star checked"></span>
+                                <span class="fa fa-star checked"></span>
+                                <span class="fa fa-star checked"></span>
+                                <span class="fa fa-star checked"></span>
+                            </div>
+                            <p class="testimonial-answer">Hakan bey çok ilgili ve çok iyi bir doktor caprazbag ve
+                                diskoid menisküs ameliyatı oldum 1 ay sonra yürümeye başladım ve her istedigimde
+                                kendisine ulaşabilme imkanım oldu kendisine ilgisinden ve kibar özverili sevecen
+                                tavrından dolayı minnettarım</p>
+                            <button class="read-more-btn">Devamını Oku</button>
+                        </div>
+                        <div class="swiper-slide">
+                            <div class="testimonial-question-row">
+                                <span class="testimonial-question">Se... </span> <span
+                                    class="fa fa-star checked"></span>
+                                <span class="fa fa-star checked"></span>
+                                <span class="fa fa-star checked"></span>
+                                <span class="fa fa-star checked"></span>
+                                <span class="fa fa-star checked"></span>
+                            </div>
+                            <p class="testimonial-answer">Prof Dr. Hakan Çicek hayatımda tanıdığım en ilgili ve hümanist
+                                doktor. İlk görüşmeye gittiğimde doğru karar verdigimi hissettim. iki dizimi aynı anda
+                                ameliyat etti. ameliyat öncesi ve sonrası gerekli tüm açıklamaları yaptı. Tüm sorularıma
+                                içtenlikle cevap veren, insana enerjisi ve gulen yüzüyle iyi hissettiren bir hekim. Çok
+                                şükür ameliyatim da çok başarılı geçti. İyileşme surecimde çok iyi gidiyor. Hocam sizden
+                                Allah razı olsun. sizin gibi hekim sayısi inşallah çoğalır. İyi ki varsınız, iyiki
+                                tanıdım sizi...</p>
+                            <button class="read-more-btn">Devamını Oku</button>
+                        </div>
+                        <div class="swiper-slide">
+                            <div class="testimonial-question-row">
+                                <span class="testimonial-question">A... A... </span> <span
+                                    class="fa fa-star checked"></span>
+                                <span class="fa fa-star checked"></span>
+                                <span class="fa fa-star checked"></span>
+                                <span class="fa fa-star checked"></span>
+                                <span class="fa fa-star checked"></span>
+                            </div>
+                            <p class="testimonial-answer">Hakan bey çok mütevazi çok ilgili Bi hekim.. ve mesleğinde de
+                                çok basarili. Annemin kolu kirilmisti ,herkes ameliyat diyordu ama annemin panik atağı
+                                old icin çok korkuyordu hakan bey sabirla annemi takip ederek ameliyatsiz seklde kolunu
+                                iyilestirdi, babamın diyabetten dolayi parmağı kesilecekti yine kendisi farklı
+                                yöntemleri ile kesilmesine izin vermedi ve iyileştirdi... kesinlikle hakan cicek işinde
+                                çok tecrübeli ve başarılı.. tek dogru adres bizim için...</p>
+                            <button class="read-more-btn">Devamını Oku</button>
+                        </div>
+                        <div class="swiper-slide">
+                            <div class="testimonial-question-row">
+                                <span class="testimonial-question">M... G... </span> <span
+                                    class="fa fa-star checked"></span>
+                                <span class="fa fa-star checked"></span>
+                                <span class="fa fa-star checked"></span>
+                                <span class="fa fa-star checked"></span>
+                                <span class="fa fa-star checked"></span>
+                            </div>
+                            <p class="testimonial-answer">Ön çapraz dış yan bağ ameliyatı oldum. Ameliyatım güzel geçti,
+                                hocamız elinden geleni yaptı. Ameliyat öncesinde ve sonrasında detaylı bir şekilde
+                                açıklamalarda bulunuyor. Gözüm kapalı kendimi ve tanıdıklarımı teslim edebileceğim ender
+                                insanlardan birisi. Hakan Hoca halkın içinden bir insan. Aşırı derecede ilgili bir
+                                doktor, herkese tavsiye ederim.</p>
+                            <button class="read-more-btn">Devamını Oku</button>
+                        </div>
+                        <div class="swiper-slide">
+                            <div class="testimonial-question-row">
+                                <span class="testimonial-question">M... P... </span> <span
+                                    class="fa fa-star checked"></span>
+                                <span class="fa fa-star checked"></span>
+                                <span class="fa fa-star checked"></span>
+                                <span class="fa fa-star checked"></span>
+                                <span class="fa fa-star checked"></span>
+                            </div>
+                            <p class="testimonial-answer">HAvasküler nekroz hastalığı için başvurdum. İki tarafıma kalça
+                                protezi yapıldı. Operasyonum çok güzel geçti, dört dörtlük bir hoca kendisi. Hastasıyla
+                                diyaloğu çok güzel, ilgili bir doktor beni mutlu ediyor. Her şeyi detaylı bir şekilde
+                                açıklıyor. Soru sorduğumda kızmadan, yorulmadan net cevaplar veriyor. Çok memnunuz
+                                kendisinden. Tüm hastalarına karşı iyi bir hekim, herkese tavsiye ettim.</p>
+                            <button class="read-more-btn">Devamını Oku</button>
+                        </div>
+                        <div class="swiper-slide">
+                            <div class="testimonial-question-row">
+                                <span class="testimonial-question">S... </span> <span class="fa fa-star checked"></span>
+                                <span class="fa fa-star checked"></span>
+                                <span class="fa fa-star checked"></span>
+                                <span class="fa fa-star checked"></span>
+                                <span class="fa fa-star checked"></span>
+                            </div>
+                            <p class="testimonial-answer">Annem için başvurduk. Ameliyat oldu, diz kapağına ve sol
+                                omzuna protez takıldı, çok memnunuz kendisinden. Ameliyat öncesinde ve sonrasında
+                                detaylı açıklamalarda bulunuyor. Annem hocamızı çok seviyor. Hiçbir sorun yaşamadık,
+                                annem şu anda çok iyi.</p>
+                            <button class="read-more-btn">Devamını Oku</button>
+                        </div>
+                        <div class="swiper-slide">
+                            <div class="testimonial-question-row">
+                                <span class="testimonial-question">K... </span> <span class="fa fa-star checked"></span>
+                                <span class="fa fa-star checked"></span>
+                                <span class="fa fa-star checked"></span>
+                                <span class="fa fa-star checked"></span>
+                                <span class="fa fa-star checked"></span>
+                            </div>
+                            <p class="testimonial-answer">Eşim için başvurduk. 4-5 kez ameliyat oldu. Çapraz bağ, ayakta
+                                yamulma, kıkırdakta problem, aynı zamanda yapaylık yapıldı. Ameliyatları çok başarılı
+                                geçti. Şu an bastonla yürüyor. Tedavi öncesinde ve sonrasında detaylı açıklamalarda
+                                bulunuyor. Memnunuz kendisinden, işi gücü rast gitsin.</p>
+                            <button class="read-more-btn">Devamını Oku</button>
+                        </div>
+                        <div class="swiper-slide">
+                            <div class="testimonial-question-row">
+                                <span class="testimonial-question">A...</span> <span class="fa fa-star checked"></span>
+                                <span class="fa fa-star checked"></span>
+                                <span class="fa fa-star checked"></span>
+                                <span class="fa fa-star checked"></span>
+                                <span class="fa fa-star checked"></span>
+                            </div>
+                            <p class="testimonial-answer">Doç. Dr. Hakan Çiçek, hem hastalarına olan ilgisi hem de
+                                mesleğindeki bilgisi çok iyi olan değerli hocamızdır. Her iki omuzunda tekrarlayan eklem
+                                çıkığı sebebiyle başvurdum. Uyguladığı tedaviler, ilaçlar ve ameliyatlar, ben hepsinden
+                                memnunum. Tavsiye ederim.</p>
+                            <button class="read-more-btn">Devamını Oku</button>
+                        </div>
+                        <div class="swiper-slide">
+                            <div class="testimonial-question-row">
+                                <span class="testimonial-question">S...</span> <span class="fa fa-star checked"></span>
+                                <span class="fa fa-star checked"></span>
+                                <span class="fa fa-star checked"></span>
+                                <span class="fa fa-star checked"></span>
+                                <span class="fa fa-star checked"></span>
+                            </div>
+                            <p class="testimonial-answer">Sayın Hakan Çiçek doktoruma bir arkadaş tavsiyesi ile
+                                tanıştım. İyi ki de tanışmışım. Ben protez revizyonu için gitmiştim. Önce revizyon
+                                ameliyatımı başarı ile gerçekleştirdi, daha sonra yani 1 ay sonra gibi yeni protez
+                                takıldı. Çok şükür başarıyla geçti, şimdi eskisi gibi sağlığım yerinde. Sayın Dr. Hakan
+                                Çiçek Bey'e yakın ilgisinden dolayı çok memnun kaldım. İyi ki var, iyi ki tanımışım.</p>
+                            <button class="read-more-btn">Devamını Oku</button>
+                        </div>
+                        <div class="swiper-slide">
+                            <div class="testimonial-question-row">
+                                <span class="testimonial-question">H...</span> <span class="fa fa-star checked"></span>
+                                <span class="fa fa-star checked"></span>
+                                <span class="fa fa-star checked"></span>
+                                <span class="fa fa-star checked"></span>
+                                <span class="fa fa-star checked"></span>
+                            </div>
+                            <p class="testimonial-answer">Bundan 7 sene önce eşim bir trafik kazası yaptı, çoklu kemik
+                                kırığı oluştu sol ayağında. Eğer bugün yürüyorsa, önce Allah sonra Hakan Hoca'nın
+                                sayesindedir. Akabinde bende dizimden ameliyat oldum. Mesleğinin hakkını veren bir
+                                doktor. Yanına muayeneye gittiğinizde sizi kırk yıllık arkadaşı gibi karşılayan
+                                doktorumuz yolu ve bahtı açık olsun.</p>
+                            <button class="read-more-btn">Devamını Oku</button>
+                        </div>
+                        <div class="swiper-slide">
+                            <div class="testimonial-question-row">
+                                <span class="testimonial-question">E...</span> <span class="fa fa-star checked"></span>
+                                <span class="fa fa-star checked"></span>
+                                <span class="fa fa-star checked"></span>
+                                <span class="fa fa-star checked"></span>
+                                <span class="fa fa-star checked"></span>
+                            </div>
+                            <p class="testimonial-answer">Hakan Bey ile kızımın diz kapağı çıkığı ameliyatı için
+                                görüştük. Muhteşem bir insan öncelikle. İşini gerçekten çok ama çok iyi yapıyor. Kızım
+                                sağlığına kavuştu. Hem ameliyat öncesi hem sonrası her zaman Hakan Bey'in ilgisi devam
+                                etti.</p>
+                            <button class="read-more-btn">Devamını Oku</button>
+                        </div>
+                    </div>
+                    <div class="swiper-pagination"></div>
+                    <div class="navigation-container">
+                        <img src="https://www.doktortakvimi.com/img/tr/logo/logo-default-tr.svg?v=4"
+                            alt="doktor takvimi" style="width: 15vh;">
+                        <div class="navigation-buttons">
+                            <div class="swiper-button-prev custom-swiper-button"></div>
+                            <div class="swiper-button-next custom-swiper-button"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <style>
+            .testimonial-question-row {
+                display: flex;
+                align-items: flex-start;
+                justify-content: space-between;
+                width: 100%;
+                margin-bottom: 18px;
+            }
+
+            .testimonial-question {
+                font-size: 1.6rem;
+                font-weight: 700;
+                color: #155766;
+                flex: 1;
+                text-align: left;
+            }
+
+            .testimonial-answer {
+                font-size: 1.1rem;
+                color: #4a5a5a;
+                margin: 0;
+                text-align: left;
+                font-weight: 400;
+            }
+
+            .read-more-btn {
+                display: none;
+            }
+
+            @media (max-width: 768px) {
+                .testimonial-answer {
+                    overflow: hidden;
+                    position: relative;
+                    max-height: 100px;
+                    transition: max-height 0.3s ease-out;
+                }
+
+                .testimonial-answer.expanded {
+                    max-height: 1000px;
+                    transition: max-height 0.5s ease-in;
+                }
+
+                .testimonial-answer::after {
+                    content: '';
+                    position: absolute;
+                    bottom: 0;
+                    left: 0;
+                    width: 100%;
+                    height: 40px;
+                    background: linear-gradient(transparent, #d9eaed);
+                }
+
+                .testimonial-answer.expanded::after {
+                    display: none;
+                }
+
+                .read-more-btn {
+                    background: none;
+                    border: none;
+                    color: #155766;
+                    font-weight: 600;
+                    cursor: pointer;
+                    padding: 5px 10px;
+                    margin-top: 10px;
+                    text-decoration: underline;
+                    margin: 10px auto;
+                    display: block;
+                }
+            }
+
+            .testimonialSwiper {
+                position: relative;
+            }
+
+            .navigation-container {
+                position: absolute;
+                bottom: 10px;
+                left: 0;
+                right: 0;
+                display: flex;
+                justify-content: space-between;
+                align-items: center;
+                padding: 0 20px;
+            }
+
+            .navigation-buttons {
+                display: flex;
+                gap: 10px;
+            }
+
+            .custom-swiper-button {
+                position: relative !important;
+                top: auto !important;
+                left: auto !important;
+                right: auto !important;
+                bottom: auto !important;
+                margin: 0 !important;
+                color: #155766 !important;
+                background: white;
+                width: 40px !important;
+                height: 40px !important;
+                border-radius: 50%;
+                box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+            }
+
+            .custom-swiper-button::after {
+                font-size: 18px !important;
+                font-weight: bold;
+            }
+
+            .testimonialSwiper .swiper-pagination {
+                bottom: 25px;
+            }
+
+            .testimonialSwiper .swiper-pagination-bullet {
+                width: 10px;
+                height: 10px;
+                background: #155766;
+                opacity: 0.5;
+            }
+
+            .testimonialSwiper .swiper-pagination-bullet-active {
+                opacity: 1;
+                background: #155766;
+            }
+
+            @media (max-width: 700px) {
+                .testimonial-question {
+                    font-size: 1.1rem;
+                }
+
+                .custom-swiper-button {
+                    width: 35px !important;
+                    height: 35px !important;
+                }
+
+                .custom-swiper-button::after {
+                    font-size: 16px !important;
+                }
+
+                .navigation-container {
+                    padding: 0 10px;
+                }
+            }
+        </style>
         <!-- Team -->
         <div class="section">
             <div class="r-container d-flex flex-column gap-3 align-items-center">
@@ -1091,13 +1662,6 @@
                 </div>
             </div>
         </div>
-        <div class="dt-widget-container">
-            <a id="zl-url" class="zl-url"
-                href="https://www.doktortakvimi.com/hakan-cicek/ortopedi-ve-travmatoloji/adana" rel="nofollow"
-                data-zlw-doctor="hakan-cicek" data-zlw-type="big" data-zlw-opinion="true" data-zlw-hide-branding="true"
-                data-zlw-saas-only="false" data-zlw-a11y-title="Doktor randevu widgeti">Hakan
-                Çiçek - DoktorTakvimi.com</a>
-        </div>
     </main>
 
     <footer>
@@ -1288,6 +1852,83 @@
         });
     </script>
     <script>!function ($_x, _s, id) { var js, fjs = $_x.getElementsByTagName(_s)[0]; if (!$_x.getElementById(id)) { js = $_x.createElement(_s); js.id = id; js.src = "//platform.docplanner.com/js/widget.js"; fjs.parentNode.insertBefore(js, fjs); } }(document, "script", "zl-widget-s");</script>
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            // Swiper initialization
+            const testimonialSwiper = new Swiper('.testimonialSwiper', {
+                loop: true,
+                autoplay: {
+                    delay: 3500,
+                    disableOnInteraction: false,
+                },
+                pagination: {
+                    el: '.testimonialSwiper .swiper-pagination',
+                    clickable: true
+                },
+                navigation: {
+                    nextEl: '.testimonialSwiper .swiper-button-next',
+                    prevEl: '.testimonialSwiper .swiper-button-prev',
+                },
+                slidesPerView: 1,
+                spaceBetween: 30,
+                effect: 'fade',
+                fadeEffect: {
+                    crossFade: true
+                },
+                on: {
+                    slideChange: function () {
+                        // Reset all testimonials to collapsed state on mobile only
+                        if (window.innerWidth <= 768) {
+                            document.querySelectorAll('.testimonial-answer').forEach(testimonial => {
+                                testimonial.classList.remove('expanded');
+                            });
+                            document.querySelectorAll('.read-more-btn').forEach(button => {
+                                button.textContent = 'Devamını Oku';
+                            });
+                        }
+                        // Always resume autoplay on slide change
+                        testimonialSwiper.autoplay.start();
+                    }
+                }
+            });
+
+            // Read More functionality
+            document.querySelectorAll('.read-more-btn').forEach(button => {
+                button.addEventListener('click', function () {
+                    // Only handle click events on mobile
+                    if (window.innerWidth <= 768) {
+                        const testimonial = this.previousElementSibling;
+                        testimonial.classList.toggle('expanded');
+                        this.textContent = testimonial.classList.contains('expanded') ? 'Daha Az Göster' : 'Devamını Oku';
+
+                        // Check if any testimonial is expanded
+                        const hasExpandedTestimonial = document.querySelector('.testimonial-answer.expanded') !== null;
+
+                        // Pause or resume autoplay based on expanded state
+                        if (hasExpandedTestimonial) {
+                            testimonialSwiper.autoplay.stop();
+                        } else {
+                            testimonialSwiper.autoplay.start();
+                        }
+                    }
+                });
+            });
+
+            // Handle window resize
+            window.addEventListener('resize', function () {
+                if (window.innerWidth > 768) {
+                    // On desktop, remove all expanded classes and resume autoplay
+                    document.querySelectorAll('.testimonial-answer').forEach(testimonial => {
+                        testimonial.classList.remove('expanded');
+                    });
+                    document.querySelectorAll('.read-more-btn').forEach(button => {
+                        button.textContent = 'Devamını Oku';
+                    });
+                    testimonialSwiper.autoplay.start();
+                }
+            });
+        });
+    </script>
 
 </body>
 
