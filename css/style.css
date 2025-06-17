@@ -2800,3 +2800,147 @@ a {
         font-size: 30px;
     }
 }
+
+.testimonial-question-row {
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    width: 100%;
+    margin-bottom: 18px;
+}
+
+.testimonial-question {
+    font-size: 1.6rem;
+    font-weight: 700;
+    color: #155766;
+    flex: 1;
+    text-align: left;
+}
+
+.testimonial-answer {
+    font-size: 1.1rem;
+    color: #4a5a5a;
+    margin: 0;
+    text-align: left;
+    font-weight: 400;
+}
+
+.read-more-btn {
+    display: none;
+}
+
+@media (max-width: 768px) {
+    .testimonial-answer {
+        overflow: hidden;
+        position: relative;
+        max-height: 100px;
+        transition: max-height 0.3s ease-out;
+    }
+
+    .testimonial-answer.expanded {
+        max-height: 1000px;
+        transition: max-height 0.5s ease-in;
+    }
+
+    .testimonial-answer::after {
+        content: '';
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        width: 100%;
+        height: 40px;
+        background: linear-gradient(transparent, #d9eaed);
+    }
+
+    .testimonial-answer.expanded::after {
+        display: none;
+    }
+
+    .read-more-btn {
+        background: none;
+        border: none;
+        color: #155766;
+        font-weight: 600;
+        cursor: pointer;
+        padding: 5px 10px;
+        margin-top: 10px;
+        text-decoration: underline;
+        margin: 10px auto;
+        display: block;
+    }
+}
+
+.testimonialSwiper {
+    position: relative;
+}
+
+.navigation-container {
+    position: absolute;
+    bottom: 10px;
+    left: 0;
+    right: 0;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 20px;
+}
+
+.navigation-buttons {
+    display: flex;
+    gap: 10px;
+}
+
+.custom-swiper-button {
+    position: relative !important;
+    top: auto !important;
+    left: auto !important;
+    right: auto !important;
+    bottom: auto !important;
+    margin: 0 !important;
+    color: #155766 !important;
+    background: white;
+    width: 40px !important;
+    height: 40px !important;
+    border-radius: 50%;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+}
+
+.custom-swiper-button::after {
+    font-size: 18px !important;
+    font-weight: bold;
+}
+
+.testimonialSwiper .swiper-pagination {
+    bottom: 25px;
+}
+
+.testimonialSwiper .swiper-pagination-bullet {
+    width: 10px;
+    height: 10px;
+    background: #155766;
+    opacity: 0.5;
+}
+
+.testimonialSwiper .swiper-pagination-bullet-active {
+    opacity: 1;
+    background: #155766;
+}
+
+@media (max-width: 700px) {
+    .testimonial-question {
+        font-size: 1.1rem;
+    }
+
+    .custom-swiper-button {
+        width: 35px !important;
+        height: 35px !important;
+    }
+
+    .custom-swiper-button::after {
+        font-size: 16px !important;
+    }
+
+    .navigation-container {
+        padding: 0 10px;
+    }
+}
