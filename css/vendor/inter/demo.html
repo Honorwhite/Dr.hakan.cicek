@@ -295,6 +295,34 @@
     <!-- Google Search Results Favicon Support -->
     <meta itemprop="image" content="https://profdrhakancicek.com/image/favicon/favicon-32x32.png">
     <meta property="og:image" content="https://profdrhakancicek.com/image/favicon/android-chrome-512x512.png">
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=AW-17056411775"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag() { dataLayer.push(arguments); }
+        gtag('js', new Date());
+
+        gtag('config', 'AW-17056411775');
+    </script>
+
+    <!-- Event snippet for Tıkla ve ara conversion page
+In your html page, add the snippet and call gtag_report_conversion when someone clicks on the chosen link or button. -->
+    <script>
+        function gtag_report_conversion(url) {
+            var callback = function () {
+                if (typeof (url) != 'undefined') {
+                    window.location = url;
+                }
+            };
+            gtag('event', 'conversion', {
+                'send_to': 'AW-17056411775/Xv4SCLnP5u0aEP_gkMU_',
+                'value': 1.0,
+                'currency': 'TRY',
+                'event_callback': callback
+            });
+            return false;
+        }
+    </script>
 </head>
 
 <body>
