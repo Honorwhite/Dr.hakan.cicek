@@ -1,51 +1,64 @@
 $(function () {
     'use strict';
 
-    // Ambil semua formulir yang ingin kita terapkan gaya validasi kustom Bootstrap
+    // EmailJS Initialization
+    if (typeof emailjs !== 'undefined') {
+        emailjs.init("i070ZtH6g9mNrJ42x");
+    }
+
     const forms = $('.needs-validation');
 
-    // Loop melalui formulir dan mencegah pengiriman
     forms.on('submit', function (event) {
+        event.preventDefault();
         const form = $(this);
-
-        var actionInput = $(this).find("input[name='action']");
+        const submitBtn = form.find('.submit_form');
+        const originalBtnText = submitBtn.html();
 
         if (!form[0].checkValidity()) {
-            event.preventDefault();
             event.stopPropagation();
         } else {
-            event.preventDefault();
-            $('.submit_form').html('Sending...');
-            $('.submit_subscribe').html('Sending...');
-            const toast = new bootstrap.Toast($('.success_msg')[0]);
-            const errtoast = new bootstrap.Toast($('.error_msg')[0]);
-            var formData = form.serialize();
-            $.ajax({
-                type: "POST",
-                url: "php/form_process.php",
-                data: formData,
-                success: function (response) {
-                    if (response === 'success') {
-                        if (actionInput.length > 0) {
-                            if (actionInput.val() === 'subscribe') {
-                                $('.submit_subscribe').html('Subscribe');
-                                const toast_comment = new bootstrap.Toast($('.success_msg_subscribe')[0]);
-                                toast_comment.show();
-                            }
+            submitBtn.html('Gönderiliyor...');
+            submitBtn.prop('disabled', true);
 
-                        } else {
-                            toast.show()
-                            $('.submit_form').html('Send Message');
-                        }
+            // Get form data
+            const formData = {
+                name: form.find('[name="name"]').val(),
+                phone: form.find('[name="phone"]').val(),
+                email: form.find('[name="email"]').val(),
+                treatment: form.find('[name="treatment"]').val(),
+                preferred_date: form.find('[name="preferred_date"]').val(),
+                preferred_time: form.find('[name="preferred_time"]').val(),
+                symptoms: form.find('[name="symptoms"]').val()
+            };
 
-                    } else {
-                        // errtoast.show()
-                        console.log('errorrrrrr')
-                        $('.submit_form').html('Send Message');
-                        $('.submit_subscribe').html('Subscribe');
-                    }
+            // Format Date (YYYY-MM-DD to DD.MM.YYYY as requested by 'ters' mention, or ay/gün/yıl as literally requested)
+            // User requested "ay gün yıl" but also said "it is currently reversed (ters)". 
+            // In TR, DD.MM.YYYY is standard. US is MM/DD/YYYY. 
+            // I will provide DD.MM.YYYY (Standard TR) as it is the most logical 'correction' to YYYY-MM-DD.
+            if (formData.preferred_date) {
+                const dateParts = formData.preferred_date.split('-');
+                if (dateParts.length === 3) {
+                    // DD.MM.YYYY format
+                    formData.preferred_date = `${dateParts[2]}.${dateParts[1]}.${dateParts[0]}`;
                 }
-            });
+            }
+
+            // EmailJS Send
+            emailjs.send('service_c9c4pip', 'template_wuvdzfj', formData)
+                .then(function() {
+                    const toast = new bootstrap.Toast($('.success_msg')[0]);
+                    toast.show();
+                    form[0].reset();
+                    form.removeClass('was-validated');
+                }, function(error) {
+                    console.error('EmailJS Hatası:', error);
+                    const errtoast = new bootstrap.Toast($('.error_msg')[0]);
+                    errtoast.show();
+                })
+                .finally(function() {
+                    submitBtn.html(originalBtnText);
+                    submitBtn.prop('disabled', false);
+                });
         }
 
         form.addClass('was-validated');
