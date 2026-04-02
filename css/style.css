@@ -2944,3 +2944,64 @@ a {
         padding: 0 10px;
     }
 }
+
+/* ----------------------------------------------------------- */
+/* Mobile Bottom Bar Styles                                    */
+/* ----------------------------------------------------------- */
+.mobile-bottom-bar {
+    display: none;
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background: #ffffff;
+    box-shadow: 0 -2px 15px rgba(0,0,0,0.1);
+    z-index: 10000;
+    justify-content: space-around;
+    align-items: center;
+    padding: 12px 0;
+    border-top: 1px solid #eee;
+    border-top-left-radius: 20px;
+    border-top-right-radius: 20px;
+}
+
+@media screen and (max-width: 768px) {
+    .mobile-bottom-bar {
+        display: flex;
+    }
+    
+    .whatsapp-float {
+        display: none !important;
+    }
+    
+    body {
+        padding-bottom: 80px !important;
+    }
+}
+
+.mobile-bottom-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-decoration: none;
+    color: var(--text-color);
+    font-size: 13px;
+    font-weight: 600;
+    font-family: var(--font-2);
+    transition: all 0.3s ease;
+    flex: 1;
+}
+
+.mobile-bottom-item i {
+    font-size: 24px;
+    margin-bottom: 5px;
+    color: var(--accent-color);
+}
+
+.mobile-bottom-item:hover {
+    color: var(--accent-color);
+}
+
+.mobile-bottom-item span {
+    line-height: 1.2;
+}

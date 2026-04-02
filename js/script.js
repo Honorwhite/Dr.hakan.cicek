@@ -16,17 +16,17 @@ $(document).ready(function () {
 
     const tabCourse = $('#course-tab');
     const tabDuration = $('#tab-duration');
-    
+
     let courseActive = tabCourse.find('.tab.active');
     let dataCourseActive = courseActive.data('course');
-    
+
     let durationActive = tabDuration.find('.tab.active');
-    let dataDurationActive = durationActive.data('duration');    
-    
+    let dataDurationActive = durationActive.data('duration');
+
     filterClasses(dataCourseActive);
     filterDuration(dataDurationActive);
 
-    tabCourse.find('.tab').on('click' , function(e){
+    tabCourse.find('.tab').on('click', function (e) {
         e.preventDefault();
         let course = $(this).data('course');
         filterClasses(course);
@@ -34,7 +34,7 @@ $(document).ready(function () {
         $(this).siblings().removeClass('active');
     });
 
-    tabDuration.find('.tab').on('click' , function(e){
+    tabDuration.find('.tab').on('click', function (e) {
         e.preventDefault();
         let duration = $(this).data('duration');
         filterDuration(duration);
@@ -42,11 +42,11 @@ $(document).ready(function () {
         $(this).siblings().removeClass('active');
     });
 
-    function filterClasses(course) {    
+    function filterClasses(course) {
         if (course === 'all') {
             $('.class-course').addClass('active');
         } else {
-            $('.class-course').each(function() {
+            $('.class-course').each(function () {
                 const courses = $(this).attr('data-courses') || '';
                 if (courses.includes(course)) {
                     $(this).addClass('active');
@@ -56,12 +56,12 @@ $(document).ready(function () {
             });
         }
     }
-    
+
     function filterDuration(duration) {
         if (duration === 'all') {
             $('.class-duration').addClass('active');
         } else {
-            $('.class-duration').each(function() {
+            $('.class-duration').each(function () {
                 const durations = $(this).attr('data-duration') || '';
                 if (durations.includes(duration)) {
                     $(this).addClass('active');
@@ -103,7 +103,7 @@ function checkScroll() {
         if (!element.classList.contains('animated')) {
             const targetValue = parseInt(element.getAttribute("data-target"), 10);
             const durationValue = parseInt(element.getAttribute("data-duration"), 10);
-            
+
             // Memeriksa apakah elemen muncul di viewport
             const rect = element.getBoundingClientRect();
             if (rect.top >= 0 && rect.bottom <= window.innerHeight) {
@@ -117,16 +117,35 @@ function checkScroll() {
 // Menambah event listener untuk scroll
 window.addEventListener('scroll', checkScroll);
 
-$(document).ready(function() {
-    $('.marquee-container').each(function() {
+$(document).ready(function () {
+    $('.marquee-container').each(function () {
         const cont = $(this); // Mengambil marquee-container saat ini
         const content = cont.find('.marquee-content');
         const clone = content.clone();
         const clone2 = clone.clone();
         cont.append(clone);
         cont.append(clone2); // Clone hanya untuk container ini
-        
+
         cont.find('.marquee-content').addClass('marquee'); // Tambahkan class marquee pada konten yang di-clone
     });
+
+    // Mobile Bottom Bar Injection
+    const mobileBottomBar = `
+        <div class="mobile-bottom-bar">
+            <a href="tel:05322777401" class="mobile-bottom-item" onclick="return gtag_report_conversion('tel:05322777401');">
+                <i class="fa-solid fa-phone"></i>
+                <span>Tıkla Ara</span>
+            </a>
+            <a href="https://wa.me/905322777401" class="mobile-bottom-item" target="_blank">
+                <i class="fa-brands fa-whatsapp"></i>
+                <span>WhatsApp</span>
+            </a>
+            <a href="https://www.google.com/maps/search/?api=1&query=Medical+Park+Seyhan+Hastanesi+Adana" class="mobile-bottom-item" target="_blank">
+                <i class="fa-solid fa-location-dot"></i>
+                <span>Yol Tarifi</span>
+            </a>
+        </div>
+    `;
+    $('body').append(mobileBottomBar);
 });
 
