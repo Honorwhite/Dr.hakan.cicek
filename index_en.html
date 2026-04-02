@@ -259,6 +259,7 @@
             right: 0;
             bottom: 0;
             z-index: 2;
+            pointer-events: none;
         }
 
         /* DoktorTakvimi.com Widget Stilleri */
@@ -2295,6 +2296,7 @@ In your html page, add the snippet and call gtag_report_conversion when someone 
         document.addEventListener('DOMContentLoaded', function () {
             const bannerSwiper = new Swiper('.bannerSwiper', {
                 loop: true,
+                grabCursor: true,
                 autoplay: {
                     delay: 4000,
                     disableOnInteraction: false,
@@ -2307,17 +2309,17 @@ In your html page, add the snippet and call gtag_report_conversion when someone 
 
             const bannerTextSwiper = new Swiper('.bannerTextSwiper', {
                 loop: true,
+                grabCursor: true,
                 autoplay: {
                     delay: 4000,
                     disableOnInteraction: false,
                 },
-                allowTouchMove: false
+                allowTouchMove: true
             });
 
             // İki slider'ı senkronize et
-            bannerSwiper.on('slideChange', function () {
-                bannerTextSwiper.slideTo(bannerSwiper.realIndex);
-            });
+            bannerSwiper.controller.control = bannerTextSwiper;
+            bannerTextSwiper.controller.control = bannerSwiper;
         });
     </script>
     <script>!function ($_x, _s, id) { var js, fjs = $_x.getElementsByTagName(_s)[0]; if (!$_x.getElementById(id)) { js = $_x.createElement(_s); js.id = id; js.src = "//platform.docplanner.com/js/widget.js"; fjs.parentNode.insertBefore(js, fjs); } }(document, "script", "zl-widget-s");</script>
@@ -2326,6 +2328,7 @@ In your html page, add the snippet and call gtag_report_conversion when someone 
             // Swiper initialization
             const testimonialSwiper = new Swiper('.testimonialSwiper', {
                 loop: true,
+                grabCursor: true,
                 autoplay: {
                     delay: 3500,
                     disableOnInteraction: false,

@@ -218,6 +218,7 @@ $(function () {
     const videoSwiper = new Swiper('.videoSwiper', {
         slidesPerView: 1,
         spaceBetween: 20,
+        grabCursor: true,
         autoplay: {
             delay: 3000,
             disableOnInteraction: false
