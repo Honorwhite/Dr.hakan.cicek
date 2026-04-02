@@ -117,6 +117,36 @@ function checkScroll() {
 // Menambah event listener untuk scroll
 window.addEventListener('scroll', checkScroll);
 
+// Global function for Google Ads Conversion Tracking
+function gtag_report_conversion(url) {
+    var callback = function () {
+        if (typeof (url) != 'undefined' && url.indexOf('tel:') === -1 && url.indexOf('wa.me') === -1) {
+            window.location = url;
+        }
+    };
+    
+    if (typeof gtag !== 'undefined') {
+        gtag('event', 'conversion', {
+            'send_to': 'AW-17056411775/Xv4SCLnP5u0aEP_gkMU_',
+            'value': 1.0,
+            'currency': 'TRY',
+            'event_callback': callback
+        });
+        // Set a fallback timeout for the callback
+        setTimeout(callback, 1000);
+    } else {
+        callback();
+    }
+    
+    // For tel: and whatsapp: links, we don't want to block the default browser action
+    // because window.location = 'tel:...' is often blocked by popup blockers or security settings
+    if (url && (url.indexOf('tel:') !== -1 || url.indexOf('wa.me') !== -1)) {
+        return true;
+    }
+    
+    return false;
+}
+
 $(document).ready(function () {
     $('.marquee-container').each(function () {
         const cont = $(this); // Mengambil marquee-container saat ini
@@ -132,7 +162,7 @@ $(document).ready(function () {
     // Mobile Bottom Bar Injection
     const mobileBottomBar = `
         <div class="mobile-bottom-bar">
-            <a href="tel:05322777401" class="mobile-bottom-item" onclick="return gtag_report_conversion('tel:05322777401');">
+            <a href="tel:+905322777401" class="mobile-bottom-item" onclick="gtag_report_conversion('tel:+905322777401');">
                 <i class="fa-solid fa-phone"></i>
                 <span>Tıkla Ara</span>
             </a>
@@ -148,4 +178,6 @@ $(document).ready(function () {
     `;
     $('body').append(mobileBottomBar);
 });
+
+
 
