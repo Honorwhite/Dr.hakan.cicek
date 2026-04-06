@@ -33,6 +33,7 @@ $(function () {
 });
 
 $(function () {
+/*
     var swiperTestimonials = new Swiper('.swiperTestimonials', {
         autoplay: {
             delay: 3000
@@ -65,7 +66,7 @@ $(function () {
             clickable: true,
         },
     });
-
+*/
 });
 
 $(function () {
@@ -162,6 +163,7 @@ const swiper = new Swiper('.custom-swiper', {
     },
 });
 
+/*
 const mySwiper = new Swiper('.mySwiper', {
     direction: 'horizontal',
     slidesPerView: 4, // Jumlah slide yang ditampilkan
@@ -185,6 +187,7 @@ const mySwiper = new Swiper('.mySwiper', {
         draggable: true,
     }
 });
+*/
 
 $(function () {
     var swiperCard = new Swiper(".swiperService", {

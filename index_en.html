@@ -443,6 +443,14 @@
             background: #155766;
         }
 
+        #hakanNext.swiper-button-disabled,
+        #hakanPrev.swiper-button-disabled {
+            opacity: 1 !important;
+            pointer-events: auto !important;
+            cursor: pointer !important;
+            display: flex !important;
+        }
+
         @media (max-width: 700px) {
             .testimonial-question {
                 font-size: 1.1rem;
@@ -710,7 +718,8 @@ In your html page, add the snippet and call gtag_report_conversion when someone 
                         <div class="mb-xl-0 mb-3">
                             <a href="tel:+905322777401"
                                 class="btn btn-accent-outline d-flex flex-row rounded-pill gap-2 px-4 py-2">
-                                <a href="tel:+905322777401" style="color: inherit; text-decoration: none;">0(532) 277 74 01</a>
+                                <i class="fa-solid fa-phone"></i> 0(532) 277 74 01
+
                             </a>
                         </div>
                     </div>
@@ -941,7 +950,8 @@ In your html page, add the snippet and call gtag_report_conversion when someone 
                                 </div>
                                 <div class="d-flex flex-row gap-1 align-items-center">
                                     <i class="rtmicon rtmicon-classic-phone fs-5"></i>
-                                    <a href="tel:+905322777401" class="font-3" style="color: inherit; text-decoration: none;">0(532) 277 74 01</a>
+                                    <a href="tel:+905322777401" class="font-3"
+                                        style="color: inherit; text-decoration: none;">0(532) 277 74 01</a>
                                 </div>
                             </div>
                         </div>
@@ -1242,264 +1252,206 @@ In your html page, add the snippet and call gtag_report_conversion when someone 
                                 style="font-size: 2.2rem; font-weight: 700; color: #155766; text-align: center; width: 100%; margin-bottom: 0.5rem;">
                                 What Do Our Patients Say?</p>
                         </div>
-                        <div class="swiper testimonialSwiper w-100" style="padding-bottom: 30px; position: relative;">
+                        <div class="swiper testimonialSwiper w-100" id="hakanTestimonialSwiper"
+                            style="padding-bottom: 30px; position: relative;">
                             <div class="swiper-wrapper" style="padding-bottom: 30px;">
                                 <div class="swiper-slide">
                                     <div class="testimonial-question-row">
-                                        <span class="testimonial-question">C....</span> <span
-                                            class="fa fa-star checked"></span>
+                                        <span class="testimonial-question">p....k</span>
                                         <span class="fa fa-star checked"></span>
                                         <span class="fa fa-star checked"></span>
                                         <span class="fa fa-star checked"></span>
                                         <span class="fa fa-star checked"></span>
+                                        <span class="fa fa-star checked"></span>
+                                        <small class="text-muted ms-2" style="font-size: 0.75rem; opacity: 0.7;">March
+                                            31, 2026</small>
                                     </div>
-                                    <p class="testimonial-answer">After my HTO (high tibial osteotomy) surgery on my
-                                        knee, I was referred to Dr. Hakan for surgery related to ligament laxity,
-                                        meniscus tear, and kneecap dislocation. Dr. Hakan addressed these issues in the
-                                        first surgery, and later, because my knee could not fully extend due to bone
-                                        curvature, I requested him to perform my second HTO surgery as well. Both
-                                        surgeries performed by Dr. Hakan were successful, and we were very satisfied
-                                        with his follow-up and post-operative care. Many patients had recommended Dr.
-                                        Hakan, but we never expected to be this satisfied with the process. I have never
-                                        seen any of his patients give negative feedback. The nurse working with him was
-                                        also very attentive; we could reach her 24/7 (except when in surgery, but she
-                                        was always available otherwise). I am very pleased with their follow-up and the
-                                        effort they put into the surgeries. They are very kind people.</p>
-                                    <button class="read-more-btn">Devamını Oku</button>
+                                    <p class="testimonial-answer">I had severe hip pain and clicking sounds when
+                                        climbing stairs. Dr. Hakan diagnosed me with avascular necrosis and we started
+                                        Stem Cell Therapy. The process was explained very clearly and I felt safe.
+                                        Everything is going great now. Highly recommend him!</p>
+                                    <button class="read-more-btn">Read More</button>
                                 </div>
                                 <div class="swiper-slide">
                                     <div class="testimonial-question-row">
-                                        <span class="testimonial-question">me.... </span> <span
-                                            class="fa fa-star checked"></span>
+                                        <span class="testimonial-question">r....g</span>
                                         <span class="fa fa-star checked"></span>
                                         <span class="fa fa-star checked"></span>
                                         <span class="fa fa-star checked"></span>
                                         <span class="fa fa-star checked"></span>
+                                        <span class="fa fa-star checked"></span>
+                                        <small class="text-muted ms-2"
+                                            style="font-size: 0.75rem; opacity: 0.7;">February 25, 2026</small>
                                     </div>
-                                    <p class="testimonial-answer">Everyone said my mother needed shoulder surgery. I
-                                        took her to Dr. Hakan, and he said she would recover without surgery in a short
-                                        time, and it happened just as he said. I also had a shoulder problem, and he
-                                        said he would solve it very simply. He is more than just a doctor; he is a true
-                                        scholar and scientist. His politeness and sincerity are at the highest level,
-                                        and as soon as you talk to him, you believe you will be healed. Whenever someone
-                                        around me has an orthopedic problem, I tell them there is no need to look
-                                        elsewhere—this applies to everyone. I also want to mention the nurse separately.
-                                        I have never seen such a caring, knowledgeable nurse who is so well-versed in
-                                        her field and works in perfect harmony with the doctor. If you have any other
-                                        issues, she even helps you choose the right doctor. She is so well-trained,
-                                        kind, and cheerful. If you meet them, you can't help but admire both of
-                                        them—they are like therapy experts. It was a great honor for me to know both my
-                                        doctor and the nurse. May God bless them both, with my respects...</p>
-                                    <button class="read-more-btn">Devamını Oku</button>
+                                    <p class="testimonial-answer">Found Dr. Hakan online. My knees had severe
+                                        calcification and other doctors suggested prosthesis. At 41, I wanted to avoid
+                                        surgery. Dr. Hakan was very sincere; he explained that Stem Cell Therapy was a
+                                        better option for now. I'm very happy with the results!</p>
+                                    <button class="read-more-btn">Read More</button>
                                 </div>
                                 <div class="swiper-slide">
                                     <div class="testimonial-question-row">
-                                        <span class="testimonial-question">i̇...Y... </span> <span
-                                            class="fa fa-star checked"></span>
+                                        <span class="testimonial-question">e.....</span>
                                         <span class="fa fa-star checked"></span>
                                         <span class="fa fa-star checked"></span>
                                         <span class="fa fa-star checked"></span>
                                         <span class="fa fa-star checked"></span>
+                                        <span class="fa fa-star checked"></span>
+                                        <small class="text-muted ms-2"
+                                            style="font-size: 0.75rem; opacity: 0.7;">February 19, 2026</small>
                                     </div>
-                                    <p class="testimonial-answer">Before meeting our doctor, I received remote support
-                                        for a meniscus tear, and then I traveled 750 km to have surgery for the cleaning
-                                        of the meniscus and cartilage fracture. The information he provided was
-                                        satisfactory, and the interventions he performed were definitely very successful
-                                        with excellent results. I highly recommend him.</p>
-                                    <button class="read-more-btn">Devamını Oku</button>
+                                    <p class="testimonial-answer">My father had severe knee pain due to calcification.
+                                        Dr. Hakan is very humble and trustworthy. He applied joint injection and
+                                        collagen mixture. My father is doing very well now without surgery. Dr. Hakan
+                                        will be our first choice if surgery is needed later.</p>
+                                    <button class="read-more-btn">Read More</button>
                                 </div>
                                 <div class="swiper-slide">
                                     <div class="testimonial-question-row">
-                                        <span class="testimonial-question">Ha... </span> <span
-                                            class="fa fa-star checked"></span>
+                                        <span class="testimonial-question">a....ç</span>
                                         <span class="fa fa-star checked"></span>
                                         <span class="fa fa-star checked"></span>
                                         <span class="fa fa-star checked"></span>
                                         <span class="fa fa-star checked"></span>
+                                        <span class="fa fa-star checked"></span>
+                                        <small class="text-muted ms-2"
+                                            style="font-size: 0.75rem; opacity: 0.7;">February 2, 2026</small>
                                     </div>
-                                    <p class="testimonial-answer">Mr. Hakan is a very attentive and excellent doctor. I
-                                        had ACL and discoid meniscus surgery, and I started walking one month later. I
-                                        was able to reach him whenever I needed. I am grateful for his attention,
-                                        kindness, dedication, and caring attitude.</p>
-                                    <button class="read-more-btn">Devamını Oku</button>
+                                    <p class="testimonial-answer">My 72-year-old mother had severe hip damage. Other
+                                        doctors avoided surgery due to her age. Dr. Hakan performed a successful Total
+                                        Hip Replacement. She can walk now without pain. We are so grateful!</p>
+                                    <button class="read-more-btn">Read More</button>
                                 </div>
                                 <div class="swiper-slide">
                                     <div class="testimonial-question-row">
-                                        <span class="testimonial-question">Se... </span> <span
-                                            class="fa fa-star checked"></span>
+                                        <span class="testimonial-question">k…...k</span>
                                         <span class="fa fa-star checked"></span>
                                         <span class="fa fa-star checked"></span>
                                         <span class="fa fa-star checked"></span>
                                         <span class="fa fa-star checked"></span>
+                                        <span class="fa fa-star checked"></span>
+                                        <small class="text-muted ms-2" style="font-size: 0.75rem; opacity: 0.7;">January
+                                            21, 2026</small>
                                     </div>
-                                    <p class="testimonial-answer">Prof. Dr. Hakan Çiçek is the most attentive and humane
-                                        doctor I have ever met. From the first appointment, I felt I had made the right
-                                        decision. He operated on both my knees at the same time. He explained everything
-                                        necessary before and after the surgery. He sincerely answered all my questions
-                                        and made me feel good with his energy and smile. Thank God, my surgery was very
-                                        successful, and my recovery is going very well. May God bless you, doctor. I
-                                        hope there will be more doctors like you. I am glad you exist, and I am glad I
-                                        met you...</p>
-                                    <button class="read-more-btn">Devamını Oku</button>
+                                    <p class="testimonial-answer">After a traffic accident 3 years ago, I had multiple
+                                        fractures and couldn't walk despite previous surgeries. Dr. Hakan performed my
+                                        surgery and now I can walk again. He is a very communicative and trustworthy
+                                        doctor.</p>
+                                    <button class="read-more-btn">Read More</button>
                                 </div>
                                 <div class="swiper-slide">
                                     <div class="testimonial-question-row">
-                                        <span class="testimonial-question">A... A... </span> <span
-                                            class="fa fa-star checked"></span>
+                                        <span class="testimonial-question">n....t</span>
                                         <span class="fa fa-star checked"></span>
                                         <span class="fa fa-star checked"></span>
                                         <span class="fa fa-star checked"></span>
                                         <span class="fa fa-star checked"></span>
+                                        <span class="fa fa-star checked"></span>
+                                        <small class="text-muted ms-2" style="font-size: 0.75rem; opacity: 0.7;">January
+                                            10, 2026</small>
                                     </div>
-                                    <p class="testimonial-answer">Mr. Hakan is a very humble and attentive physician,
-                                        and he is also very successful in his profession. My mother's arm was broken,
-                                        and everyone said she needed surgery, but because she had panic attacks, she was
-                                        very afraid. Mr. Hakan patiently followed her and healed her arm without
-                                        surgery. My father's finger was going to be amputated due to diabetes, but
-                                        again, he used different methods and prevented the amputation, and healed it.
-                                        Dr. Hakan is definitely very experienced and successful in his field. He is the
-                                        only right address for us...</p>
-                                    <button class="read-more-btn">Devamını Oku</button>
+                                    <p class="testimonial-answer">My mother had a hip infection after a previous surgery
+                                        elsewhere. Dr. Hakan treated the infection and performed a successful hip
+                                        prosthesis revision. She is walking pain-free now. The care from him and his
+                                        nurse was excellent.</p>
+                                    <button class="read-more-btn">Read More</button>
                                 </div>
                                 <div class="swiper-slide">
                                     <div class="testimonial-question-row">
-                                        <span class="testimonial-question">M... G... </span> <span
-                                            class="fa fa-star checked"></span>
+                                        <span class="testimonial-question">k…...d</span>
                                         <span class="fa fa-star checked"></span>
                                         <span class="fa fa-star checked"></span>
                                         <span class="fa fa-star checked"></span>
                                         <span class="fa fa-star checked"></span>
+                                        <span class="fa fa-star checked"></span>
+                                        <small class="text-muted ms-2" style="font-size: 0.75rem; opacity: 0.7;">January
+                                            10, 2026</small>
                                     </div>
-                                    <p class="testimonial-answer">I had anterior cruciate and lateral ligament surgery.
-                                        My surgery went well, and our doctor did his best. He provides detailed
-                                        explanations before and after the surgery. He is one of the rare people to whom
-                                        I can entrust myself and my loved ones without hesitation. Dr. Hakan is a man of
-                                        the people. He is extremely attentive and I recommend him to everyone.</p>
-                                    <button class="read-more-btn">Devamını Oku</button>
+                                    <p class="testimonial-answer">I was diagnosed with AVN and told I needed a
+                                        prosthesis. Dr. Hakan treated me with medication and follow-ups without surgery.
+                                        He is a truly rare doctor who prioritizes the patient over surgery. Highly
+                                        recommend!</p>
+                                    <button class="read-more-btn">Read More</button>
                                 </div>
                                 <div class="swiper-slide">
                                     <div class="testimonial-question-row">
-                                        <span class="testimonial-question">M... P... </span> <span
-                                            class="fa fa-star checked"></span>
+                                        <span class="testimonial-question">s....a</span>
                                         <span class="fa fa-star checked"></span>
                                         <span class="fa fa-star checked"></span>
                                         <span class="fa fa-star checked"></span>
                                         <span class="fa fa-star checked"></span>
+                                        <span class="fa fa-star checked"></span>
+                                        <small class="text-muted ms-2"
+                                            style="font-size: 0.75rem; opacity: 0.7;">December 12, 2025</small>
                                     </div>
-                                    <p class="testimonial-answer">I consulted him for avascular necrosis. I had hip
-                                        replacements on both sides. My operation went very well; he is a perfect doctor.
-                                        His communication with his patients is excellent, and he is a caring doctor who
-                                        makes me happy. He explains everything in detail and answers questions clearly
-                                        and patiently. We are very satisfied with him. He is a good doctor to all his
-                                        patients, and I have recommended him to everyone.</p>
-                                    <button class="read-more-btn">Devamını Oku</button>
+                                    <p class="testimonial-answer">Had ACL and meniscus surgery with Dr. Hakan. His nurse
+                                        was very helpful. We were worried about the surgery based on others' bad
+                                        experiences, but our process was very smooth thanks to him and his team.</p>
+                                    <button class="read-more-btn">Read More</button>
                                 </div>
                                 <div class="swiper-slide">
                                     <div class="testimonial-question-row">
-                                        <span class="testimonial-question">S... </span> <span
-                                            class="fa fa-star checked"></span>
+                                        <span class="testimonial-question">a....e</span>
                                         <span class="fa fa-star checked"></span>
                                         <span class="fa fa-star checked"></span>
                                         <span class="fa fa-star checked"></span>
                                         <span class="fa fa-star checked"></span>
+                                        <span class="fa fa-star checked"></span>
+                                        <small class="text-muted ms-2"
+                                            style="font-size: 0.75rem; opacity: 0.7;">November 24, 2025</small>
                                     </div>
-                                    <p class="testimonial-answer">We consulted him for my mother. She had surgery and
-                                        received prostheses in her kneecap and left shoulder. We are very satisfied with
-                                        him. He provides detailed explanations before and after the surgery. My mother
-                                        loves our doctor very much. We had no problems, and my mother is doing very well
-                                        now.</p>
-                                    <button class="read-more-btn">Devamını Oku</button>
+                                    <p class="testimonial-answer">I had recurrent shoulder dislocations. Dr. Hakan is
+                                        one of the best shoulder surgeons. He performed a successful surgery and I'm
+                                        very grateful.</p>
+                                    <button class="read-more-btn">Read More</button>
                                 </div>
                                 <div class="swiper-slide">
                                     <div class="testimonial-question-row">
-                                        <span class="testimonial-question">K... </span> <span
-                                            class="fa fa-star checked"></span>
+                                        <span class="testimonial-question">ah...</span>
                                         <span class="fa fa-star checked"></span>
                                         <span class="fa fa-star checked"></span>
                                         <span class="fa fa-star checked"></span>
                                         <span class="fa fa-star checked"></span>
+                                        <span class="fa fa-star checked"></span>
+                                        <small class="text-muted ms-2" style="font-size: 0.75rem; opacity: 0.7;">October
+                                            8, 2025</small>
                                     </div>
-                                    <p class="testimonial-answer">We consulted him for my spouse. He had 4-5 surgeries.
-                                        ACL, foot deformity, cartilage problems, and also prosthesis were performed. The
-                                        surgeries were very successful. He is now walking with a cane. He provides
-                                        detailed explanations before and after the treatment. We are satisfied with him,
-                                        may his work go well.</p>
-                                    <button class="read-more-btn">Devamını Oku</button>
+                                    <p class="testimonial-answer">I applied to Dr. Hakan for a spinal fracture after the
+                                        earthquake. His humane approach and sincerity made me feel at ease. I avoided
+                                        surgery thanks to him.</p>
+                                    <button class="read-more-btn">Read More</button>
                                 </div>
                                 <div class="swiper-slide">
                                     <div class="testimonial-question-row">
-                                        <span class="testimonial-question">A...</span> <span
-                                            class="fa fa-star checked"></span>
+                                        <span class="testimonial-question">m....d</span>
                                         <span class="fa fa-star checked"></span>
                                         <span class="fa fa-star checked"></span>
                                         <span class="fa fa-star checked"></span>
                                         <span class="fa fa-star checked"></span>
+                                        <span class="fa fa-star checked"></span>
+                                        <small class="text-muted ms-2" style="font-size: 0.75rem; opacity: 0.7;">July
+                                            10, 2025</small>
                                     </div>
-                                    <p class="testimonial-answer">Assoc. Prof. Dr. Hakan Çiçek is a valuable doctor who
-                                        is both very attentive to his patients and very knowledgeable in his profession.
-                                        I consulted him for recurrent joint dislocations in both shoulders. I am
-                                        satisfied with all the treatments, medications, and surgeries he performed. I
-                                        recommend him.</p>
-                                    <button class="read-more-btn">Devamını Oku</button>
+                                    <p class="testimonial-answer">I had multiple ligament tears and meniscus injuries
+                                        after the earthquake. Other doctors said I wouldn't walk again, but Dr. Hakan
+                                        performed my surgery and now I can walk and go back to work. I'm forever
+                                        grateful.</p>
+                                    <button class="read-more-btn">Read More</button>
                                 </div>
-                                <div class="swiper-slide">
-                                    <div class="testimonial-question-row">
-                                        <span class="testimonial-question">S...</span> <span
-                                            class="fa fa-star checked"></span>
-                                        <span class="fa fa-star checked"></span>
-                                        <span class="fa fa-star checked"></span>
-                                        <span class="fa fa-star checked"></span>
-                                        <span class="fa fa-star checked"></span>
-                                    </div>
-                                    <p class="testimonial-answer">I met Dr. Hakan Çiçek through a friend's
-                                        recommendation. I am glad I did. I went for a prosthesis revision. First, he
-                                        successfully performed my revision surgery, and about a month later, a new
-                                        prosthesis was placed. Thankfully, everything went well, and now I am as healthy
-                                        as before. I am very pleased with Dr. Hakan Çiçek's close attention. I am glad
-                                        he exists, and I am glad I met him.</p>
-                                    <button class="read-more-btn">Devamını Oku</button>
-                                </div>
-                                <div class="swiper-slide">
-                                    <div class="testimonial-question-row">
-                                        <span class="testimonial-question">H...</span> <span
-                                            class="fa fa-star checked"></span>
-                                        <span class="fa fa-star checked"></span>
-                                        <span class="fa fa-star checked"></span>
-                                        <span class="fa fa-star checked"></span>
-                                        <span class="fa fa-star checked"></span>
-                                    </div>
-                                    <p class="testimonial-answer">Seven years ago, my spouse had a traffic accident and
-                                        suffered multiple fractures in the left leg. If he is walking today, it is first
-                                        thanks to God and then to Dr. Hakan. Afterwards, I also had knee surgery. He is
-                                        a doctor who does his job with dedication. When you go to his office, he
-                                        welcomes you like a lifelong friend. May his path and fortune be open.</p>
-                                    <button class="read-more-btn">Devamını Oku</button>
-                                </div>
-                                <div class="swiper-slide">
-                                    <div class="testimonial-question-row">
-                                        <span class="testimonial-question">E...</span> <span
-                                            class="fa fa-star checked"></span>
-                                        <span class="fa fa-star checked"></span>
-                                        <span class="fa fa-star checked"></span>
-                                        <span class="fa fa-star checked"></span>
-                                        <span class="fa fa-star checked"></span>
-                                    </div>
-                                    <p class="testimonial-answer">We consulted Mr. Hakan for my daughter's kneecap
-                                        dislocation surgery. First of all, he is a wonderful person. He does his job
-                                        extremely well. My daughter regained her health. Dr. Hakan's attention continued
-                                        both before and after the surgery.</p>
-                                    <button class="read-more-btn">Devamını Oku</button>
-                                </div>
+
                             </div>
                             <div class="swiper-pagination"></div>
                             <div class="navigation-container">
                                 <img src="https://www.doktortakvimi.com/img/tr/logo/logo-default-tr.svg?v=4"
                                     alt="doktor takvimi" style="width: 15vh;">
                                 <div class="navigation-buttons">
-                                    <div class="swiper-button-prev custom-swiper-button"></div>
-                                    <div class="swiper-button-next custom-swiper-button"></div>
+                                    <div class="swiper-button-prev custom-swiper-button" id="hakanPrev"></div>
+                                    <div class="swiper-button-next custom-swiper-button" id="hakanNext"></div>
                                 </div>
                             </div>
+                        </div>
+                        <div class="text-center mt-3">
+                            <a href="reviews.html" class="btn btn-accent rounded-pill px-5 py-2">See All Reviews</a>
                         </div>
                     </div>
                 </div>
@@ -1547,9 +1499,9 @@ In your html page, add the snippet and call gtag_report_conversion when someone 
                 </div>
 
                 <!-- Class Cards -->
-                <div class="swiper mySwiper w-100 pulse scrollanimation animated">
-                    <div class="swiper-wrapper">
-                        <div class="swiper-slide class-course" data-courses="all,course5">
+                <div class="w-100 pulse scrollanimation animated">
+                    <div class="row row-cols-2 row-cols-md-3 row-cols-lg-4 g-4 justify-content-center">
+                        <div class="col class-course" data-courses="all,course5">
                             <a href="adana_meniscus.html">
                                 <div class="card class-card card-overlay gap-3">
                                     <div class="card-image overflow-hidden rounded-4 position-relative">
@@ -1572,7 +1524,7 @@ In your html page, add the snippet and call gtag_report_conversion when someone 
                                 </div>
                             </a>
                         </div>
-                        <div class="swiper-slide class-course" data-courses="all,course5">
+                        <div class="col class-course" data-courses="all,course5">
                             <a href="shoulder_and_ankle.html">
                                 <div class="card class-card card-overlay gap-3">
                                     <div class="card-image overflow-hidden rounded-4 position-relative">
@@ -1595,7 +1547,7 @@ In your html page, add the snippet and call gtag_report_conversion when someone 
                                 </div>
                             </a>
                         </div>
-                        <div class="swiper-slide class-course" data-courses="all,course2">
+                        <div class="col class-course" data-courses="all,course2">
                             <a href="sports_injuries.html">
                                 <div class="card class-card card-overlay gap-3">
                                     <div class="card-image overflow-hidden rounded-4 position-relative">
@@ -1618,7 +1570,7 @@ In your html page, add the snippet and call gtag_report_conversion when someone 
                                 </div>
                             </a>
                         </div>
-                        <div class="swiper-slide class-course" data-courses="all,course3">
+                        <div class="col class-course" data-courses="all,course3">
                             <a href="knee_injuries.html">
                                 <div class="card class-card card-overlay gap-3">
                                     <div class="card-image overflow-hidden rounded-4 position-relative">
@@ -1641,7 +1593,7 @@ In your html page, add the snippet and call gtag_report_conversion when someone 
                                 </div>
                             </a>
                         </div>
-                        <div class="swiper-slide class-course" data-courses="all,course5">
+                        <div class="col class-course" data-courses="all,course5">
                             <a href="primer_joint.html">
                                 <div class="card class-card card-overlay gap-3">
                                     <div class="card-image overflow-hidden rounded-4 position-relative">
@@ -1664,7 +1616,7 @@ In your html page, add the snippet and call gtag_report_conversion when someone 
                                 </div>
                             </a>
                         </div>
-                        <div class="swiper-slide class-course" data-courses="all,course5">
+                        <div class="col class-course" data-courses="all,course5">
                             <a href="kalcaprotezi_en.html">
                                 <div class="card class-card card-overlay gap-3">
                                     <div class="card-image overflow-hidden rounded-4 position-relative">
@@ -1687,7 +1639,7 @@ In your html page, add the snippet and call gtag_report_conversion when someone 
                                 </div>
                             </a>
                         </div>
-                        <div class="swiper-slide class-course" data-courses="all,course5">
+                        <div class="col class-course" data-courses="all,course5">
                             <a href="dizprotezi_en.html">
                                 <div class="card class-card card-overlay gap-3">
                                     <div class="card-image overflow-hidden rounded-4 position-relative">
@@ -1710,7 +1662,7 @@ In your html page, add the snippet and call gtag_report_conversion when someone 
                                 </div>
                             </a>
                         </div>
-                        <div class="swiper-slide class-course" data-courses="all,course2">
+                        <div class="col class-course" data-courses="all,course2">
                             <a href="sporcerrahisi_en.html">
                                 <div class="card class-card card-overlay gap-3">
                                     <div class="card-image overflow-hidden rounded-4 position-relative">
@@ -1733,7 +1685,7 @@ In your html page, add the snippet and call gtag_report_conversion when someone 
                                 </div>
                             </a>
                         </div>
-                        <div class="swiper-slide class-course" data-courses="all,course4">
+                        <div class="col class-course" data-courses="all,course4">
                             <a href="spine_surgery.html">
                                 <div class="card class-card card-overlay gap-3">
                                     <div class="card-image overflow-hidden rounded-4 position-relative">
@@ -1756,7 +1708,7 @@ In your html page, add the snippet and call gtag_report_conversion when someone 
                                 </div>
                             </a>
                         </div>
-                        <div class="swiper-slide class-course" data-courses="all,course4">
+                        <div class="col class-course" data-courses="all,course4">
                             <a href="ortopedic_trauma.html">
                                 <div class="card class-card card-overlay gap-3">
                                     <div class="card-image overflow-hidden rounded-4 position-relative">
@@ -1780,7 +1732,6 @@ In your html page, add the snippet and call gtag_report_conversion when someone 
                             </a>
                         </div>
                     </div>
-                    <div class="swiper-scrollbar custom-scrollbar"></div>
                 </div>
             </div>
         </div>
@@ -2179,7 +2130,8 @@ In your html page, add the snippet and call gtag_report_conversion when someone 
                                     <div class="d-flex flex-column gap-3">
                                         <div class="d-flex flex-row align-items-center font-2 gap-3">
                                             <i class="rtmicon rtmicon-classic-phone fs-4"></i>
-                                            <a href="tel:+905322777401" style="color: inherit; text-decoration: none;">0(532) 277 74 01</a>
+                                            <a href="tel:+905322777401"
+                                                style="color: inherit; text-decoration: none;">0(532) 277 74 01</a>
                                         </div>
                                         <div class="d-flex flex-column gap-2">
                                             <a href="doktor-hakan-cicek.html" style="color: #fff;">Prof. Dr. Hakan Çiçek
@@ -2297,30 +2249,21 @@ In your html page, add the snippet and call gtag_report_conversion when someone 
     </script>
     <script>
         document.addEventListener('DOMContentLoaded', function () {
+            // Banner Swiper
             const bannerSwiper = new Swiper('.bannerSwiper', {
                 loop: true,
                 grabCursor: true,
-                autoplay: {
-                    delay: 4000,
-                    disableOnInteraction: false,
-                },
-                pagination: {
-                    el: '.swiper-pagination',
-                    clickable: true
-                }
+                autoplay: { delay: 4000, disableOnInteraction: false },
+                pagination: { el: '.bannerSwiper .swiper-pagination', clickable: true }
             });
 
             const bannerTextSwiper = new Swiper('.bannerTextSwiper', {
                 loop: true,
                 grabCursor: true,
-                autoplay: {
-                    delay: 4000,
-                    disableOnInteraction: false,
-                },
+                autoplay: { delay: 4000, disableOnInteraction: false },
                 allowTouchMove: true
             });
 
-            // İki slider'ı senkronize et
             bannerSwiper.controller.control = bannerTextSwiper;
             bannerTextSwiper.controller.control = bannerSwiper;
         });
@@ -2328,41 +2271,24 @@ In your html page, add the snippet and call gtag_report_conversion when someone 
     <script>!function ($_x, _s, id) { var js, fjs = $_x.getElementsByTagName(_s)[0]; if (!$_x.getElementById(id)) { js = $_x.createElement(_s); js.id = id; js.src = "//platform.docplanner.com/js/widget.js"; fjs.parentNode.insertBefore(js, fjs); } }(document, "script", "zl-widget-s");</script>
     <script>
         document.addEventListener('DOMContentLoaded', function () {
-            // Swiper initialization
-            const testimonialSwiper = new Swiper('.testimonialSwiper', {
+            // Testimonial Swiper
+            const hTestimonialSwiper = new Swiper('#hakanTestimonialSwiper', {
                 loop: true,
                 grabCursor: true,
-                autoplay: {
-                    delay: 3500,
-                    disableOnInteraction: false,
-                },
-                pagination: {
-                    el: '.testimonialSwiper .swiper-pagination',
-                    clickable: true
-                },
-                navigation: {
-                    nextEl: '.testimonialSwiper .swiper-button-next',
-                    prevEl: '.testimonialSwiper .swiper-button-prev',
-                },
+                observer: true,
+                observeParents: true,
+                autoplay: { delay: 5000, disableOnInteraction: false },
+                pagination: { el: '#hakanTestimonialSwiper .swiper-pagination', clickable: true },
+                navigation: { nextEl: '#hakanNext', prevEl: '#hakanPrev' },
                 slidesPerView: 1,
                 spaceBetween: 30,
-                effect: 'fade',
-                fadeEffect: {
-                    crossFade: true
-                },
                 on: {
                     slideChange: function () {
-                        // Reset all testimonials to collapsed state on mobile only
                         if (window.innerWidth <= 768) {
-                            document.querySelectorAll('.testimonial-answer').forEach(testimonial => {
-                                testimonial.classList.remove('expanded');
-                            });
-                            document.querySelectorAll('.read-more-btn').forEach(button => {
-                                button.textContent = 'Devamını Oku';
-                            });
+                            document.querySelectorAll('.testimonial-answer').forEach(t => t.classList.remove('expanded'));
+                            document.querySelectorAll('.read-more-btn').forEach(b => b.textContent = 'Devamını Oku');
                         }
-                        // Always resume autoplay on slide change
-                        testimonialSwiper.autoplay.start();
+                        if (this.autoplay) this.autoplay.start();
                     }
                 }
             });
@@ -2370,36 +2296,24 @@ In your html page, add the snippet and call gtag_report_conversion when someone 
             // Read More functionality
             document.querySelectorAll('.read-more-btn').forEach(button => {
                 button.addEventListener('click', function () {
-                    // Only handle click events on mobile
                     if (window.innerWidth <= 768) {
                         const testimonial = this.previousElementSibling;
                         testimonial.classList.toggle('expanded');
                         this.textContent = testimonial.classList.contains('expanded') ? 'Daha Az Göster' : 'Devamını Oku';
-
-                        // Check if any testimonial is expanded
-                        const hasExpandedTestimonial = document.querySelector('.testimonial-answer.expanded') !== null;
-
-                        // Pause or resume autoplay based on expanded state
-                        if (hasExpandedTestimonial) {
-                            testimonialSwiper.autoplay.stop();
+                        if (document.querySelector('.testimonial-answer.expanded')) {
+                            hTestimonialSwiper.autoplay.stop();
                         } else {
-                            testimonialSwiper.autoplay.start();
+                            hTestimonialSwiper.autoplay.start();
                         }
                     }
                 });
             });
 
-            // Handle window resize
             window.addEventListener('resize', function () {
                 if (window.innerWidth > 768) {
-                    // On desktop, remove all expanded classes and resume autoplay
-                    document.querySelectorAll('.testimonial-answer').forEach(testimonial => {
-                        testimonial.classList.remove('expanded');
-                    });
-                    document.querySelectorAll('.read-more-btn').forEach(button => {
-                        button.textContent = 'Devamını Oku';
-                    });
-                    testimonialSwiper.autoplay.start();
+                    document.querySelectorAll('.testimonial-answer').forEach(t => t.classList.remove('expanded'));
+                    document.querySelectorAll('.read-more-btn').forEach(b => b.textContent = 'Devamını Oku');
+                    hTestimonialSwiper.autoplay.start();
                 }
             });
         });

@@ -4,89 +4,240 @@
       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
       xsi:schemaLocation="http://www.sitemaps.org/schemas/sitemap/0.9
             http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd">
-<!-- created with Free Online Sitemap Generator www.xml-sitemaps.com -->
-
 
 <url>
   <loc>https://profdrhakancicek.com/</loc>
-  <lastmod>2025-04-19T10:27:46+00:00</lastmod>
+  <lastmod>2026-04-06</lastmod>
   <priority>1.00</priority>
 </url>
 <url>
   <loc>https://profdrhakancicek.com/index.html</loc>
-  <lastmod>2025-04-19T10:27:46+00:00</lastmod>
+  <lastmod>2026-04-06</lastmod>
+  <priority>1.00</priority>
+</url>
+<url>
+  <loc>https://profdrhakancicek.com/about.html</loc>
+  <lastmod>2026-04-06</lastmod>
+  <priority>0.90</priority>
+</url>
+<url>
+  <loc>https://profdrhakancicek.com/adana_meniscus.html</loc>
+  <lastmod>2026-04-06</lastmod>
   <priority>0.80</priority>
 </url>
 <url>
-  <loc>https://profdrhakancicek.com/hakan_cicek.html</loc>
-  <lastmod>2025-04-19T10:27:46+00:00</lastmod>
+  <loc>https://profdrhakancicek.com/adana_meniskus.html</loc>
+  <lastmod>2026-04-06</lastmod>
   <priority>0.80</priority>
 </url>
 <url>
-  <loc>https://profdrhakancicek.com/hizmetlerimiz.html</loc>
-  <lastmod>2025-04-19T10:27:46+00:00</lastmod>
-  <priority>0.80</priority>
-</url>
-<url>
-  <loc>https://profdrhakancicek.com/iletisim.html</loc>
-  <lastmod>2025-04-19T10:27:46+00:00</lastmod>
+  <loc>https://profdrhakancicek.com/anterior_cruciate_ligament_surgery.html</loc>
+  <lastmod>2026-04-06</lastmod>
   <priority>0.80</priority>
 </url>
 <url>
   <loc>https://profdrhakancicek.com/blog.html</loc>
-  <lastmod>2025-04-19T10:27:46+00:00</lastmod>
+  <lastmod>2026-04-06</lastmod>
   <priority>0.80</priority>
 </url>
 <url>
-  <loc>https://profdrhakancicek.com/omuzveayakbilegi.html</loc>
-  <lastmod>2025-04-19T10:27:47+00:00</lastmod>
+  <loc>https://profdrhakancicek.com/blog_en.html</loc>
+  <lastmod>2026-04-06</lastmod>
   <priority>0.80</priority>
 </url>
 <url>
-  <loc>https://profdrhakancicek.com/sporyaralanmalari.html</loc>
-  <lastmod>2025-04-19T10:27:47+00:00</lastmod>
+  <loc>https://profdrhakancicek.com/contact.html</loc>
+  <lastmod>2026-04-06</lastmod>
+  <priority>0.90</priority>
+</url>
+<url>
+  <loc>https://profdrhakancicek.com/dizbaglejyonlari.html</loc>
+  <lastmod>2026-04-06</lastmod>
   <priority>0.80</priority>
 </url>
 <url>
   <loc>https://profdrhakancicek.com/dizbagyaralanmalari.html</loc>
-  <lastmod>2025-04-19T10:27:46+00:00</lastmod>
+  <lastmod>2026-04-06</lastmod>
   <priority>0.80</priority>
 </url>
 <url>
-  <loc>https://profdrhakancicek.com/primerprotez.html</loc>
-  <lastmod>2025-04-19T10:27:47+00:00</lastmod>
+  <loc>https://profdrhakancicek.com/dizprotezi.html</loc>
+  <lastmod>2026-04-06</lastmod>
   <priority>0.80</priority>
 </url>
 <url>
-  <loc>https://profdrhakancicek.com/omurgacerrahisi.html</loc>
-  <lastmod>2025-04-19T10:27:47+00:00</lastmod>
+  <loc>https://profdrhakancicek.com/dizprotezi_en.html</loc>
+  <lastmod>2026-04-06</lastmod>
   <priority>0.80</priority>
 </url>
 <url>
-  <loc>https://profdrhakancicek.com/ortopediktravma.html</loc>
-  <lastmod>2025-04-19T10:27:47+00:00</lastmod>
+  <loc>https://profdrhakancicek.com/doktor-hakan-cicek.html</loc>
+  <lastmod>2026-04-06</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://profdrhakancicek.com/doktor-hakan-cicek_en.html</loc>
+  <lastmod>2026-04-06</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://profdrhakancicek.com/eklemartroplasti.html</loc>
+  <lastmod>2026-04-06</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://profdrhakancicek.com/hakan_cicek.html</loc>
+  <lastmod>2026-04-06</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://profdrhakancicek.com/hizmetlerimiz.html</loc>
+  <lastmod>2026-04-06</lastmod>
+  <priority>0.90</priority>
+</url>
+<url>
+  <loc>https://profdrhakancicek.com/iletisim.html</loc>
+  <lastmod>2026-04-06</lastmod>
+  <priority>0.90</priority>
+</url>
+<url>
+  <loc>https://profdrhakancicek.com/index_en.html</loc>
+  <lastmod>2026-04-06</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://profdrhakancicek.com/joint_arthroplasty.html</loc>
+  <lastmod>2026-04-06</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://profdrhakancicek.com/kalcaprotezi.html</loc>
+  <lastmod>2026-04-06</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://profdrhakancicek.com/kalcaprotezi_en.html</loc>
+  <lastmod>2026-04-06</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://profdrhakancicek.com/knee_injuries.html</loc>
+  <lastmod>2026-04-06</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://profdrhakancicek.com/knee_ligament_injuries.html</loc>
+  <lastmod>2026-04-06</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://profdrhakancicek.com/kvkk.html</loc>
+  <lastmod>2026-04-06</lastmod>
   <priority>0.80</priority>
 </url>
 <url>
   <loc>https://profdrhakancicek.com/makaleler.html</loc>
-  <lastmod>2025-04-19T10:27:46+00:00</lastmod>
+  <lastmod>2026-04-06</lastmod>
   <priority>0.80</priority>
 </url>
 <url>
-  <loc>https://profdrhakancicek.com/dizbaglejyonlari.html</loc>
-  <lastmod>2025-04-19T10:27:46+00:00</lastmod>
-  <priority>0.64</priority>
+  <loc>https://profdrhakancicek.com/omurgacerrahisi.html</loc>
+  <lastmod>2026-04-06</lastmod>
+  <priority>0.80</priority>
 </url>
 <url>
-  <loc>https://profdrhakancicek.com/eklemartroplasti.html</loc>
-  <lastmod>2025-04-19T10:27:46+00:00</lastmod>
-  <priority>0.64</priority>
+  <loc>https://profdrhakancicek.com/omuzveayakbilegi.html</loc>
+  <lastmod>2026-04-06</lastmod>
+  <priority>0.80</priority>
 </url>
 <url>
-  <loc>https://profdrhakancicek.com/adana_meniskus.html</loc>
-  <lastmod>2025-09-19T10:27:46+00:00</lastmod>
-  <priority>0.64</priority>
+  <loc>https://profdrhakancicek.com/on_capraz_bag_cerrahisi.html</loc>
+  <lastmod>2026-04-06</lastmod>
+  <priority>0.80</priority>
 </url>
-
-
+<url>
+  <loc>https://profdrhakancicek.com/ortopedic_trauma.html</loc>
+  <lastmod>2026-04-06</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://profdrhakancicek.com/ortopediktravma.html</loc>
+  <lastmod>2026-04-06</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://profdrhakancicek.com/patella.html</loc>
+  <lastmod>2026-04-06</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://profdrhakancicek.com/patella_neden_cikar.html</loc>
+  <lastmod>2026-04-06</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://profdrhakancicek.com/primer_joint.html</loc>
+  <lastmod>2026-04-06</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://profdrhakancicek.com/primerprotez.html</loc>
+  <lastmod>2026-04-06</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://profdrhakancicek.com/privacy_policy.html</loc>
+  <lastmod>2026-04-06</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://profdrhakancicek.com/publishings.html</loc>
+  <lastmod>2026-04-06</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://profdrhakancicek.com/reviews.html</loc>
+  <lastmod>2026-04-06</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://profdrhakancicek.com/services.html</loc>
+  <lastmod>2026-04-06</lastmod>
+  <priority>0.90</priority>
+</url>
+<url>
+  <loc>https://profdrhakancicek.com/shoulder_and_ankle.html</loc>
+  <lastmod>2026-04-06</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://profdrhakancicek.com/spine_surgery.html</loc>
+  <lastmod>2026-04-06</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://profdrhakancicek.com/sporcerrahisi.html</loc>
+  <lastmod>2026-04-06</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://profdrhakancicek.com/sporcerrahisi_en.html</loc>
+  <lastmod>2026-04-06</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://profdrhakancicek.com/sports_injuries.html</loc>
+  <lastmod>2026-04-06</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://profdrhakancicek.com/sporyaralanmalari.html</loc>
+  <lastmod>2026-04-06</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://profdrhakancicek.com/yorumlar.html</loc>
+  <lastmod>2026-04-06</lastmod>
+  <priority>0.80</priority>
+</url>
 </urlset>
