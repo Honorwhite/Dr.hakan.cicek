@@ -124,7 +124,7 @@ function gtag_report_conversion(url) {
             window.location = url;
         }
     };
-    
+
     if (typeof gtag !== 'undefined') {
         gtag('event', 'conversion', {
             'send_to': 'AW-17056411775/Xv4SCLnP5u0aEP_gkMU_',
@@ -137,17 +137,28 @@ function gtag_report_conversion(url) {
     } else {
         callback();
     }
-    
+
     // For tel: and whatsapp: links, we don't want to block the default browser action
     // because window.location = 'tel:...' is often blocked by popup blockers or security settings
     if (url && (url.indexOf('tel:') !== -1 || url.indexOf('wa.me') !== -1)) {
         return true;
     }
-    
+
     return false;
 }
 
+// PWA Installation Logic
+let deferredPrompt;
+// Captured earlier to catch the event
+window.addEventListener('beforeinstallprompt', (e) => {
+    e.preventDefault();
+    deferredPrompt = e;
+});
+
 $(document).ready(function () {
+    const isIOS = /iPad|iPhone|iPod/.test(navigator.userAgent) || (navigator.platform === 'MacIntel' && navigator.maxTouchPoints > 1);
+    const isStandalone = window.navigator.standalone === true || window.matchMedia('(display-mode: standalone)').matches;
+
     $('.marquee-container').each(function () {
         const cont = $(this); // Mengambil marquee-container saat ini
         const content = cont.find('.marquee-content');
@@ -177,6 +188,84 @@ $(document).ready(function () {
         </div>
     `;
     $('body').append(mobileBottomBar);
+
+    // Custom PWA UI Injection
+    const pwaUI = `
+        <div id="pwa-install-banner" class="pwa-banner" style="display: none;">
+            <div class="pwa-banner-content">
+                <div class="pwa-banner-info">
+                    <img src="web-app-manifest-192x192.png" alt="App Icon" class="pwa-mini-logo">
+                    <span>Uygulamamızı Kurun</span>
+                </div>
+                <div class="pwa-banner-actions">
+                    <button id="pwa-install-btn" class="btn btn-accent rounded-pill btn-sm px-3">Yükle</button>
+                    <button id="pwa-close-banner" class="pwa-banner-close">&times;</button>
+                </div>
+            </div>
+        </div>
+        <div id="ios-install-overlay" class="pwa-overlay" style="display: none;">
+            <div class="pwa-modal">
+                <button class="pwa-close-btn">&times;</button>
+                <div class="pwa-content">
+                    <img src="web-app-manifest-192x192.png" alt="App Icon" class="pwa-logo">
+                    <h3 style="font-size: 1.5rem; margin-bottom: 1rem; color: #155766;">Uygulamayı Kur</h3>
+                    <p>Prof. Dr. Hakan Çiçek uygulamasına ana ekranınızdan kolayca ulaşın.</p>
+                    <div class="ios-instructions">
+                        <div class="step">
+                            <span class="step-num">1</span>
+                            <p>Safari menüsündeki <strong>Paylaş</strong> <i class="fa-solid fa-arrow-up-from-bracket ios-icon"></i> simgesine dokunun.</p>
+                        </div>
+                        <div class="step">
+                            <span class="step-num">2</span>
+                            <p>Menüde <strong>Ana Ekrana Ekle</strong> <i class="fa-solid fa-square-plus ios-icon"></i> seçeneğine dokunun.</p>
+                        </div>
+                    </div>
+                    <button class="btn btn-accent w-100 rounded-pill mt-3 pwa-close-btn-inner">Anladım</button>
+                </div>
+            </div>
+        </div>
+    `;
+    $('body').append(pwaUI);
+
+    const installBanner = $('#pwa-install-banner');
+    const installBtn = $('#pwa-install-btn');
+    const closeBanner = $('#pwa-close-banner');
+    const iosOverlay = $('#ios-install-overlay');
+
+    // FORCE SHOW for testing if not in standalone mode
+    if (!isStandalone) {
+        // Show for any mobile device (responsive CSS handles desktop floating)
+        installBanner.css('display', 'flex').hide().show(); 
+    }
+
+    installBtn.on('click', function() {
+        if (deferredPrompt) {
+            deferredPrompt.prompt();
+            deferredPrompt.userChoice.then((choiceResult) => {
+                if (choiceResult.outcome === 'accepted') {
+                    installBanner.fadeOut();
+                }
+                deferredPrompt = null;
+            });
+        } else {
+            // iOS or any device without native prompt (show manual instructions)
+            iosOverlay.fadeIn().css('display', 'flex');
+        }
+    });
+
+    closeBanner.on('click', function() {
+        installBanner.fadeOut();
+        // localStorage.setItem('pwa_banner_dismissed', 'true'); // Temporarily disabled for testing
+    });
+
+    $('.pwa-close-btn, .pwa-close-btn-inner').on('click', function() {
+        iosOverlay.fadeOut();
+    });
+
+    window.addEventListener('appinstalled', () => {
+        installBanner.fadeOut();
+        deferredPrompt = null;
+    });
 });
 
 

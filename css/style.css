@@ -3535,6 +3535,161 @@ a {
     }
 }
 
+/* PWA Styles */
+.pwa-banner {
+    position: fixed;
+    bottom: 85px; /* Above mobile bottom bar */
+    left: 15px;
+    right: 15px;
+    background: #ffffff;
+    border-radius: 15px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.15);
+    z-index: 9999;
+    padding: 12px 15px;
+    display: none; /* Managed by JS */
+    border: 1px solid #e0e0e0;
+    animation: slideUp 0.4s ease-out;
+}
+
+@keyframes slideUp {
+    from { transform: translateY(20px); opacity: 0; }
+    to { transform: translateY(0); opacity: 1; }
+}
+
+.pwa-banner-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+}
+
+.pwa-banner-info {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+.pwa-mini-logo {
+    width: 32px;
+    height: 32px;
+    border-radius: 6px;
+    object-fit: contain;
+}
+
+.pwa-banner-info span {
+    font-size: 14px;
+    font-weight: 600;
+    color: #155766;
+}
+
+.pwa-banner-actions {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.pwa-banner-close {
+    background: none;
+    border: none;
+    font-size: 20px;
+    color: #999;
+    cursor: pointer;
+    padding: 0 5px;
+}
+
+/* PWA Overlay & Modal */
+.pwa-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0, 0, 0, 0.7);
+    backdrop-filter: blur(5px);
+    z-index: 10001;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+}
+
+.pwa-modal {
+    background: #fff;
+    border-radius: 25px;
+    width: 100%;
+    max-width: 400px;
+    position: relative;
+    padding: 30px 25px;
+    text-align: center;
+    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.2);
+}
+
+.pwa-close-btn {
+    position: absolute;
+    top: 15px;
+    right: 15px;
+    background: none;
+    border: none;
+    font-size: 28px;
+    color: #ccc;
+    cursor: pointer;
+}
+
+.pwa-logo {
+    width: 70px;
+    height: 70px;
+    margin-bottom: 20px;
+    border-radius: 15px;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+}
+
+.ios-instructions {
+    margin: 25px 0;
+    text-align: left;
+}
+
+.step {
+    display: flex;
+    align-items: flex-start;
+    gap: 15px;
+    margin-bottom: 20px;
+}
+
+.step-num {
+    background: #FF9700;
+    color: white;
+    width: 28px;
+    height: 28px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+    font-weight: bold;
+    font-size: 14px;
+}
+
+.step p {
+    margin: 0;
+    font-size: 15px;
+    line-height: 1.4;
+}
+
+.ios-icon {
+    color: #007AFF; /* Apple Blue */
+    font-size: 18px;
+    margin: 0 2px;
+}
+
+@media (min-width: 769px) {
+    .pwa-banner {
+        bottom: 20px;
+        right: 20px;
+        left: auto;
+        width: 320px;
+    }
+}
+
 .bannerSwiper .swiper-slide {
     position: relative;
 }
