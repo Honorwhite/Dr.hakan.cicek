@@ -156,7 +156,9 @@ window.addEventListener('beforeinstallprompt', (e) => {
 });
 
 $(document).ready(function () {
+    const isAndroid = /android/i.test(navigator.userAgent);
     const isIOS = /iPad|iPhone|iPod/.test(navigator.userAgent) || (navigator.platform === 'MacIntel' && navigator.maxTouchPoints > 1);
+    const isSafari = isIOS && navigator.userAgent.indexOf('Safari') !== -1 && navigator.userAgent.indexOf('CriOS') === -1 && navigator.userAgent.indexOf('FxiOS') === -1 && navigator.userAgent.indexOf('OPiOS') === -1;
     const isStandalone = window.navigator.standalone === true || window.matchMedia('(display-mode: standalone)').matches;
 
     $('.marquee-container').each(function () {
@@ -232,8 +234,8 @@ $(document).ready(function () {
     const closeBanner = $('#pwa-close-banner');
     const iosOverlay = $('#ios-install-overlay');
 
-    // FORCE SHOW for testing if not in standalone mode
-    if (!isStandalone) {
+    // Show if (Android OR iOS Safari) and NOT already in standalone mode
+    if ((isAndroid || isSafari) && !isStandalone) {
         // Show for any mobile device (responsive CSS handles desktop floating)
         installBanner.css('display', 'flex').hide().show(); 
     }
