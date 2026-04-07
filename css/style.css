@@ -3683,10 +3683,7 @@ a {
 
 @media (min-width: 769px) {
     .pwa-banner {
-        bottom: 20px;
-        right: 20px;
-        left: auto;
-        width: 320px;
+        display: none !important;
     }
 }
 
