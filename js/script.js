@@ -268,6 +268,94 @@ $(document).ready(function () {
         installBanner.fadeOut();
         deferredPrompt = null;
     });
+
+    // Language Switcher Injection
+    function injectLanguageSwitcher() {
+        const pagesMap = {
+            'index.html': 'index_en.html',
+            'hakan_cicek.html': 'about.html',
+            'hizmetlerimiz.html': 'services.html',
+            'iletisim.html': 'contact.html',
+            'blog.html': 'blog_en.html',
+            'makaleler.html': 'publishings.html',
+            'yorumlar.html': 'reviews.html',
+            'kalcaprotezi.html': 'kalcaprotezi_en.html',
+            'dizprotezi.html': 'dizprotezi_en.html',
+            'sporcerrahisi.html': 'sporcerrahisi_en.html',
+            'adana_meniskus.html': 'adana_meniscus.html',
+            'dizbagyaralanmalari.html': 'knee_injuries.html',
+            'dizbaglejyonlari.html': 'knee_ligament_injuries.html',
+            'eklemartroplasti.html': 'joint_arthroplasty.html',
+            'omurgacerrahisi.html': 'spine_surgery.html',
+            'omuzveayakbilegi.html': 'shoulder_and_ankle.html',
+            'on_capraz_bag_cerrahisi.html': 'anterior_cruciate_ligament_surgery.html',
+            'ortopediktravma.html': 'ortopedic_trauma.html',
+            'patella_neden_cikar.html': 'patella.html',
+            'primerprotez.html': 'primer_joint.html',
+            'kvkk.html': 'privacy_policy.html',
+            'sporyaralanmalari.html': 'sports_injuries.html'
+        };
+
+        const reverseMap = {};
+        for (const [tr, en] of Object.entries(pagesMap)) {
+            reverseMap[en] = tr;
+        }
+        const allPages = { ...pagesMap, ...reverseMap };
+
+        const path = window.location.pathname;
+        const currentFile = path.split('/').pop() || 'index.html';
+        const otherFile = allPages[currentFile] || (currentFile.includes('_en') ? currentFile.replace('_en', '') : currentFile);
+
+        const isEn = $('html').attr('lang') === 'en' || currentFile.includes('_en') || Object.values(pagesMap).includes(currentFile);
+        
+        const trHref = isEn ? otherFile : currentFile;
+        const enHref = isEn ? currentFile : otherFile;
+        const currentLang = isEn ? 'EN' : 'TR';
+        const currentFlag = isEn ? 'image/en_flag.png' : 'image/tr_flag.png';
+        const trChecked = isEn ? '' : 'checked';
+        const enChecked = isEn ? 'checked' : '';
+
+        const langSwitcherHTML = `
+            <li class="nav-item dropdown language-selector">
+                <a class="nav-link dropdown-toggle d-flex align-items-center gap-2"
+                    href="#" id="languageDropdown" role="button" data-bs-toggle="dropdown"
+                    aria-expanded="false" style="color: var(--text-color) !important;">
+                    <img src="${currentFlag}" alt="${currentLang}" class="flag-icon" style="width: 24px !important; height: 24px !important; border-radius: 50%; object-fit: cover;">
+                    <span class="d-xl-none">Dil: </span>${currentLang}
+                </a>
+                <ul class="dropdown-menu shadow-sm dropdown-menu-end" aria-labelledby="languageDropdown">
+                    <li>
+                        <a class="dropdown-item d-flex align-items-center gap-3" href="${trHref}">
+                            <input class="form-check-input" type="radio" name="lang_select" ${trChecked} style="pointer-events: none;">
+                            <img src="image/tr_flag.png" alt="TR" class="flag-icon" style="width: 20px !important; height: 20px !important; border-radius: 50%; object-fit: cover;">
+                            <span style="flex-grow: 1;">Türkçe</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a class="dropdown-item d-flex align-items-center gap-3" href="${enHref}">
+                            <input class="form-check-input" type="radio" name="lang_select" ${enChecked} style="pointer-events: none;">
+                            <img src="image/en_flag.png" alt="EN" class="flag-icon" style="width: 20px !important; height: 20px !important; border-radius: 50%; object-fit: cover;">
+                            <span style="flex-grow: 1;">English</span>
+                        </a>
+                    </li>
+                </ul>
+            </li>
+        `;
+
+        // Remove any existing switcher and append new one
+        $('.language-selector').remove();
+        $('.navbar-nav').first().each(function() {
+            // Find and remove the old text-based switcher if it exists
+            $(this).find('li').each(function() {
+                if ($(this).text().includes('🇹🇷🇬🇧')) {
+                    $(this).remove();
+                }
+            });
+            $(this).append(langSwitcherHTML);
+        });
+    }
+
+    injectLanguageSwitcher();
 });
 
 
