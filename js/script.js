@@ -237,10 +237,10 @@ $(document).ready(function () {
     // Show if (Android OR iOS Safari) and NOT already in standalone mode
     if ((isAndroid || isSafari) && !isStandalone) {
         // Show for any mobile device (responsive CSS handles desktop floating)
-        installBanner.css('display', 'flex').hide().show(); 
+        installBanner.css('display', 'flex').hide().show();
     }
 
-    installBtn.on('click', function() {
+    installBtn.on('click', function () {
         if (deferredPrompt) {
             deferredPrompt.prompt();
             deferredPrompt.userChoice.then((choiceResult) => {
@@ -255,12 +255,12 @@ $(document).ready(function () {
         }
     });
 
-    closeBanner.on('click', function() {
+    closeBanner.on('click', function () {
         installBanner.fadeOut();
         // localStorage.setItem('pwa_banner_dismissed', 'true'); // Temporarily disabled for testing
     });
 
-    $('.pwa-close-btn, .pwa-close-btn-inner').on('click', function() {
+    $('.pwa-close-btn, .pwa-close-btn-inner').on('click', function () {
         iosOverlay.fadeOut();
     });
 
@@ -307,11 +307,11 @@ $(document).ready(function () {
         const otherFile = allPages[currentFile] || (currentFile.includes('_en') ? currentFile.replace('_en', '') : currentFile);
 
         const isEn = $('html').attr('lang') === 'en' || currentFile.includes('_en') || Object.values(pagesMap).includes(currentFile);
-        
+
         const trHref = isEn ? otherFile : currentFile;
         const enHref = isEn ? currentFile : otherFile;
         const currentLang = isEn ? 'EN' : 'TR';
-        const currentFlag = isEn ? 'image/en_flag.png' : 'image/tr_flag.png';
+        const currentFlag = isEn ? 'image/en_flag.jpg' : 'image/tr_flag.jpg';
         const trChecked = isEn ? '' : 'checked';
         const enChecked = isEn ? 'checked' : '';
 
@@ -327,14 +327,14 @@ $(document).ready(function () {
                     <li>
                         <a class="dropdown-item d-flex align-items-center gap-3" href="${trHref}">
                             <input class="form-check-input" type="radio" name="lang_select" ${trChecked} style="pointer-events: none;">
-                            <img src="image/tr_flag.png" alt="TR" class="flag-icon" style="width: 20px !important; height: 20px !important; border-radius: 50%; object-fit: cover;">
+                            <img src="image/tr_flag.jpg" alt="TR" class="flag-icon" style="width: 20px !important; height: 20px !important; border-radius: 50%; object-fit: cover;">
                             <span style="flex-grow: 1;">Türkçe</span>
                         </a>
                     </li>
                     <li>
                         <a class="dropdown-item d-flex align-items-center gap-3" href="${enHref}">
                             <input class="form-check-input" type="radio" name="lang_select" ${enChecked} style="pointer-events: none;">
-                            <img src="image/en_flag.png" alt="EN" class="flag-icon" style="width: 20px !important; height: 20px !important; border-radius: 50%; object-fit: cover;">
+                            <img src="image/en_flag.jpg" alt="EN" class="flag-icon" style="width: 20px !important; height: 20px !important; border-radius: 50%; object-fit: cover;">
                             <span style="flex-grow: 1;">English</span>
                         </a>
                     </li>
@@ -344,9 +344,9 @@ $(document).ready(function () {
 
         // Remove any existing switcher and append new one
         $('.language-selector').remove();
-        $('.navbar-nav').first().each(function() {
+        $('.navbar-nav').first().each(function () {
             // Find and remove the old text-based switcher if it exists
-            $(this).find('li').each(function() {
+            $(this).find('li').each(function () {
                 if ($(this).text().includes('🇹🇷🇬🇧')) {
                     $(this).remove();
                 }
