@@ -62,568 +62,7 @@
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/@fancyapps/ui@5.0/dist/fancybox/fancybox.umd.js"></script>
     <script src="js/video_embedded.js?v=1.1"></script>
-    <style>
-        .fancybox__caption {
-            background: rgba(0, 0, 0, 0.8);
-            padding: 20px;
-            border-radius: 8px;
-            max-width: 80%;
-            margin: 0 auto;
-        }
 
-        .fancybox__caption p {
-            color: #fff;
-            font-size: 16px;
-            line-height: 1.6;
-            margin: 0;
-            text-align: left;
-        }
-
-        .fancybox__caption h3 {
-            color: #FF9700;
-            font-size: 20px;
-            margin-bottom: 10px;
-            font-weight: bold;
-        }
-
-        .fancybox__caption .caption-content {
-            display: flex;
-            flex-direction: column;
-            gap: 10px;
-        }
-
-        .fancybox__caption .caption-content .caption-section {
-            background: rgba(255, 255, 255, 0.1);
-            padding: 10px;
-            border-radius: 5px;
-            margin-bottom: 5px;
-        }
-
-        .fancybox__caption .caption-content .caption-section h4 {
-            color: #FF9700;
-            font-size: 16px;
-            margin-bottom: 5px;
-        }
-
-        .fancybox__caption .caption-content .caption-section p {
-            font-size: 14px;
-        }
-
-        /* Banner Slider Styles */
-        .bannerSwiper {
-            width: 100%;
-            height: 100%;
-            position: relative;
-            z-index: 1;
-        }
-
-        .bannerSwiper .swiper-slide {
-            width: 100%;
-            height: 100%;
-        }
-
-        .bannerSwiper .swiper-slide picture {
-            width: 100%;
-            height: 100%;
-            display: block;
-            max-height: 70vh;
-        }
-
-        .bannerSwiper .swiper-slide picture img {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-        }
-
-        @media (max-width: 768px) {
-            .bannerSwiper .swiper-slide picture {
-                max-height: 40vh;
-                width: 100%;
-                display: flex;
-                justify-content: center;
-                align-items: center;
-                border-radius: 16px !important;
-                overflow: hidden !important;
-            }
-
-            .bannerSwiper .swiper-slide picture img {
-                width: 100%;
-                height: 100%;
-                object-fit: cover;
-                margin: 0;
-                padding: 0;
-                border-radius: 16px !important;
-            }
-
-            .bannerSwiper {
-                width: 100%;
-                margin: 0;
-                padding: 0;
-            }
-
-            .bannerSwiper .swiper-slide {
-                width: 100%;
-                margin: 0;
-                padding: 0;
-                border-radius: 16px !important;
-                overflow: hidden !important;
-            }
-        }
-
-        .bannerSwiper .swiper-pagination {
-            bottom: 20px;
-            z-index: 2;
-        }
-
-        .bannerSwiper .swiper-pagination-bullet {
-            width: 12px;
-            height: 12px;
-            background: #fff;
-            opacity: 0.5;
-        }
-
-        .bannerSwiper .swiper-pagination-bullet-active {
-            opacity: 1;
-            background: #FF9700;
-        }
-
-        .bannerTextSwiper {
-            width: 100%;
-            position: relative;
-            z-index: 3;
-            overflow: visible !important;
-        }
-
-        .bannerTextSwiper .swiper-slide {
-            opacity: 0;
-            transition: opacity 0.5s ease;
-            overflow: visible !important;
-        }
-
-        .bannerTextSwiper .swiper-slide-active {
-            opacity: 1;
-        }
-
-        .bannerTextSwiper .p-banner {
-            margin-top: 20px;
-            font-size: 1.2rem;
-            line-height: 1.6;
-        }
-
-        .floating-banner {
-            position: relative;
-            z-index: 3;
-            width: 100%;
-            max-width: 1320px;
-            margin-left: auto;
-            margin-right: auto;
-        }
-
-        .floating-banner .r-container {
-            max-width: 100%;
-        }
-
-        .floating-heading {
-            margin: 0;
-            padding: 2rem;
-            width: 100%;
-            word-wrap: break-word;
-            overflow-wrap: break-word;
-        }
-
-        .floating-heading h1 {
-            font-size: calc(1.5rem + 1vw);
-            line-height: 1.3;
-            word-wrap: break-word;
-            overflow-wrap: break-word;
-        }
-
-        @media (max-width: 768px) {
-            .floating-heading {
-                padding: 1.5rem;
-            }
-
-            .floating-heading h1 {
-                font-size: calc(1.2rem + 1vw);
-            }
-        }
-
-        .section.pt-0.position-relative {
-            position: relative;
-        }
-
-        .section.pt-0.position-relative::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            right: 0;
-            bottom: 0;
-            z-index: 2;
-            pointer-events: none;
-        }
-
-        /* DoktorTakvimi.com Widget Stilleri */
-        .dt-widget-container {
-            width: 100%;
-            max-width: 800px;
-            margin: 2rem auto;
-            padding: 0 1rem;
-        }
-
-        @media (min-width: 768px) {
-            .dt-widget-container {
-                max-width: 1000px;
-            }
-        }
-
-        @media (min-width: 1200px) {
-            .dt-widget-container {
-                max-width: 1200px;
-            }
-        }
-
-        /* Widget'ın kendisini düzenleme */
-        .zl-widget {
-            width: 100% !important;
-            height: 600px !important;
-        }
-
-        @media (max-width: 767px) {
-            .zl-widget {
-                height: 500px !important;
-            }
-        }
-
-        .testimonial-avatar img {
-            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
-        }
-
-        .testimonialSwiper .card {
-            min-height: 320px;
-            height: 320px;
-            max-height: 320px;
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            align-items: center;
-            overflow: hidden;
-        }
-
-        @media (max-width: 767px) {
-            .testimonialSwiper .card {
-                min-height: 380px;
-                height: 380px;
-                max-height: 380px;
-            }
-        }
-
-        .testimonial-question-row {
-            display: flex;
-            align-items: flex-start;
-            justify-content: space-between;
-            width: 100%;
-            margin-bottom: 18px;
-        }
-
-        .testimonial-question {
-            font-size: 1.6rem;
-            font-weight: 700;
-            color: #155766;
-            flex: 1;
-            text-align: left;
-        }
-
-        .testimonial-answer {
-            font-size: 1.1rem;
-            color: #4a5a5a;
-            margin: 0;
-            text-align: left;
-            font-weight: 400;
-        }
-
-        .read-more-btn {
-            display: none;
-        }
-
-        @media (max-width: 768px) {
-            .testimonial-answer {
-                overflow: hidden;
-                position: relative;
-                max-height: 100px;
-                transition: max-height 0.3s ease-out;
-            }
-
-            .testimonial-answer.expanded {
-                max-height: 1000px;
-                transition: max-height 0.5s ease-in;
-            }
-
-            .testimonial-answer::after {
-                content: '';
-                position: absolute;
-                bottom: 0;
-                left: 0;
-                width: 100%;
-                height: 40px;
-                background: linear-gradient(transparent, #d9eaed);
-            }
-
-            .testimonial-answer.expanded::after {
-                display: none;
-            }
-
-            .read-more-btn {
-                background: none;
-                border: none;
-                color: #155766;
-                font-weight: 600;
-                cursor: pointer;
-                padding: 5px 10px;
-                margin-top: 10px;
-                text-decoration: underline;
-                margin: 10px auto;
-                display: block;
-            }
-        }
-
-        .testimonialSwiper {
-            position: relative;
-        }
-
-        .navigation-container {
-            position: absolute;
-            bottom: 10px;
-            left: 0;
-            right: 0;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            padding: 0 20px;
-        }
-
-        .navigation-buttons {
-            display: flex;
-            gap: 10px;
-        }
-
-        .custom-swiper-button {
-            position: relative !important;
-            top: auto !important;
-            left: auto !important;
-            right: auto !important;
-            bottom: auto !important;
-            margin: 0 !important;
-            color: #155766 !important;
-            background: white;
-            width: 40px !important;
-            height: 40px !important;
-            border-radius: 50%;
-            box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
-        }
-
-        .custom-swiper-button::after {
-            font-size: 18px !important;
-            font-weight: bold;
-        }
-
-        .testimonialSwiper .swiper-pagination {
-            bottom: 25px;
-        }
-
-        .testimonialSwiper .swiper-pagination-bullet {
-            width: 10px;
-            height: 10px;
-            background: #155766;
-            opacity: 0.5;
-        }
-
-        .testimonialSwiper .swiper-pagination-bullet-active {
-            opacity: 1;
-            background: #155766;
-        }
-
-        #hakanNext.swiper-button-disabled,
-        #hakanPrev.swiper-button-disabled {
-            opacity: 1 !important;
-            pointer-events: auto !important;
-            cursor: pointer !important;
-            display: flex !important;
-        }
-
-        @media (max-width: 700px) {
-            .testimonial-question {
-                font-size: 1.1rem;
-            }
-
-            .custom-swiper-button {
-                width: 35px !important;
-                height: 35px !important;
-            }
-
-            .custom-swiper-button::after {
-                font-size: 16px !important;
-            }
-
-            .navigation-container {
-                padding: 0 10px;
-            }
-        }
-
-        .checked {
-            color: #004551;
-        }
-
-        .videoSwiper {
-            padding-bottom: 40px;
-        }
-
-        .videoSwiper .swiper-pagination {
-            bottom: 0;
-        }
-
-        .videoSwiper .swiper-pagination-bullet {
-            width: 10px;
-            height: 10px;
-            background: #155766;
-            opacity: 0.5;
-        }
-
-        .videoSwiper .swiper-pagination-bullet-active {
-            opacity: 1;
-            background: #155766;
-        }
-
-        @media (max-width: 768px) {
-            .videoSwiper {
-                padding-bottom: 30px;
-            }
-        }
-
-        .video-slider {
-            padding: 20px 0;
-        }
-
-        .video-card {
-            border-radius: 15px;
-            overflow: hidden;
-            background: white;
-            height: 100%;
-        }
-
-        .video-thumbnail {
-            position: relative;
-            aspect-ratio: 9/16;
-            overflow: hidden;
-        }
-
-        .video-thumbnail img {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-        }
-
-        .play-button {
-            position: absolute;
-            bottom: 20px;
-            right: 20px;
-            width: 50px;
-            height: 50px;
-            background: #155766;
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            color: white;
-            text-decoration: none;
-            transition: all 0.3s ease;
-        }
-
-        .play-button:hover {
-            background: #004551;
-            color: white;
-        }
-
-        .videoSwiper {
-            padding-bottom: 40px;
-        }
-
-        .videoSwiper .swiper-pagination-bullet {
-            width: 10px;
-            height: 10px;
-            background: #155766;
-            opacity: 0.5;
-        }
-
-        .videoSwiper .swiper-pagination-bullet-active {
-            opacity: 1;
-        }
-
-        .videoSwiper .swiper-button-next,
-        .videoSwiper .swiper-button-prev {
-            width: 40px;
-            height: 40px;
-            background: #155766;
-            border-radius: 50%;
-            color: white;
-        }
-
-        .videoSwiper .swiper-button-next:after,
-        .videoSwiper .swiper-button-prev:after {
-            font-size: 20px;
-        }
-
-        .videoSwiper .swiper-button-next:hover,
-        .videoSwiper .swiper-button-prev:hover {
-            background: #004551;
-        }
-
-        @media (max-width: 768px) {
-
-            .videoSwiper .swiper-button-next,
-            .videoSwiper .swiper-button-prev {
-                width: 35px;
-                height: 35px;
-            }
-
-            .videoSwiper .swiper-button-next:after,
-            .videoSwiper .swiper-button-prev:after {
-                font-size: 16px;
-            }
-        }
-
-        .bannerSwiper .swiper-slide {
-            position: relative;
-        }
-
-        .bannerSwiper .video-btn {
-            position: absolute;
-            top: 50%;
-            left: 50%;
-            transform: translate(-50%, -50%);
-            z-index: 10;
-        }
-
-        .bannerTextSwiper .video-btn {
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            margin: 0 auto;
-            margin-bottom: 20px;
-            position: relative;
-            z-index: 10;
-        }
-
-        .bannerTextSwiper .request-loader {
-            margin: 0 auto;
-            position: relative;
-            z-index: 10;
-        }
-
-        .bannerTextSwiper .swiper-wrapper {
-            overflow: visible !important;
-        }
-    </style>
 
     <!-- Preload critical assets -->
     <link rel="preload" href="image/vidcover.jpg" as="image">
@@ -730,18 +169,62 @@ In your html page, add the snippet and call gtag_report_conversion when someone 
                     <div class="swiper-wrapper">
                         <div class="swiper-slide">
                             <picture>
+                                <source media="(max-width: 768px)" srcset="image/Kapak/en/osteoarthritis.jpg">
+                                <img src="image/hakan_cicek.jpg" class="img-fluid rounded-4 w-100"
+                                    style="max-height: 80vh; object-fit: cover;"
+                                    alt="What are the Symptoms of Osteoarthritis?" loading="eager" decoding="async"
+                                    fetchpriority="high">
+                            </picture>
+                        </div>
+                        <div class="swiper-slide">
+                            <picture>
+                                <source media="(max-width: 768px)" srcset="image/Kapak/en/whats-total-knee.jpg">
+                                <img src="image/hakan_cicek.jpg" class="img-fluid rounded-4 w-100"
+                                    style="max-height: 80vh; object-fit: cover;"
+                                    alt="What is Total Knee Replacement Surgery?" loading="eager" decoding="async"
+                                    fetchpriority="high">
+                            </picture>
+                        </div>
+                        <div class="swiper-slide">
+                            <picture>
+                                <source media="(max-width: 768px)" srcset="image/Kapak/en/total-knee-replacement.jpg">
+                                <img src="image/hakan_cicek.jpg" class="img-fluid rounded-4 w-100"
+                                    style="max-height: 80vh; object-fit: cover;"
+                                    alt="How Does Total Knee Replacement Surgery Affect Knee Movements?" loading="eager"
+                                    decoding="async" fetchpriority="high">
+                            </picture>
+                        </div>
+                        <div class="swiper-slide">
+                            <picture>
+                                <source media="(max-width: 768px)" srcset="image/Kapak/en/repair-ligaments.jpg">
+                                <img src="image/hakan_cicek.jpg" class="img-fluid rounded-4 w-100"
+                                    style="max-height: 80vh; object-fit: cover;"
+                                    alt="Why is it necessary to repair all damaged ligaments in multiple ligament injuries?"
+                                    loading="eager" decoding="async" fetchpriority="high">
+                            </picture>
+                        </div>
+                        <div class="swiper-slide">
+                            <picture>
+                                <source media="(max-width: 768px)" srcset="image/Kapak/en/ligament-injuries.jpg">
+                                <img src="image/hakan_cicek.jpg" class="img-fluid rounded-4 w-100"
+                                    style="max-height: 80vh; object-fit: cover;" alt="What are Ligament Injuries?"
+                                    loading="eager" decoding="async" fetchpriority="high">
+                            </picture>
+                        </div>
+                        <div class="swiper-slide">
+                            <picture>
                                 <source media="(max-width: 768px)" srcset="image/Kapak/en/ligament_tear.jpg">
                                 <img src="image/hakan_cicek.jpg" class="img-fluid rounded-4 w-100"
                                     style="max-height: 80vh; object-fit: cover;"
-                                    alt="Ön Çapraz Bağ Yırtığı Tanısında MR tek başına yeterli mi?" loading="eager"
-                                    decoding="async" fetchpriority="high">
+                                    alt="Is MRI Alone Sufficient for Diagnosing Anterior Cruciate Ligament Rupture?"
+                                    loading="eager" decoding="async" fetchpriority="high">
                             </picture>
                         </div>
                         <div class="swiper-slide">
                             <picture>
                                 <source media="(max-width: 768px)" srcset="image/Kapak/en/arthritis.jpg">
                                 <img src="image/hakan_cicek.jpg" class="img-fluid rounded-4 w-100"
-                                    style="max-height: 80vh; object-fit: cover;" alt="Adana Eklem Kireçlenmesi"
+                                    style="max-height: 80vh; object-fit: cover;" alt="What is Arthritis?"
                                     loading="eager" decoding="async" fetchpriority="high">
                             </picture>
                         </div>
@@ -749,42 +232,43 @@ In your html page, add the snippet and call gtag_report_conversion when someone 
                             <picture>
                                 <source media="(max-width: 768px)" srcset="image/Kapak/en/patella.jpg">
                                 <img src="image/hakan_cicek.jpg" class="img-fluid rounded-4 w-100"
-                                    style="max-height: 80vh; object-fit: cover;" alt="Adana Diz Kapağı Çıkığı">
+                                    style="max-height: 80vh; object-fit: cover;" alt="What is Patellar Dislocation?">
                             </picture>
                         </div>
                         <div class="swiper-slide">
                             <picture>
                                 <source media="(max-width: 768px)" srcset="image/Kapak/en/rotator.jpg">
                                 <img src="image/hakan_cicek.jpg" class="img-fluid rounded-4 w-100"
-                                    style="max-height: 80vh; object-fit: cover;" alt="Adana Rotator Manşet Cerrahisi">
+                                    style="max-height: 80vh; object-fit: cover;" alt="What is Rotator Cuff Surgery?">
                             </picture>
                         </div>
                         <div class="swiper-slide">
                             <picture>
                                 <source media="(max-width: 768px)" srcset="image/Kapak/en/impingement.jpg">
                                 <img src="image/hakan_cicek.jpg" class="img-fluid rounded-4 w-100"
-                                    style="max-height: 80vh; object-fit: cover;" alt="Adana Omuz Sıkışması">
+                                    style="max-height: 80vh; object-fit: cover;" alt="What is Shoulder Impingement?">
                             </picture>
                         </div>
                         <div class="swiper-slide">
                             <picture>
                                 <source media="(max-width: 768px)" srcset="image/Kapak/en/aclrevision.jpg">
                                 <img src="image/hakan_cicek.jpg" class="img-fluid rounded-4 w-100"
-                                    style="max-height: 80vh; object-fit: cover;" alt="Adana Ön Çapraz Bağ Revizyon">
+                                    style="max-height: 80vh; object-fit: cover;" alt="ACL Revision Surgery in Adana">
                             </picture>
                         </div>
                         <div class="swiper-slide">
                             <picture>
                                 <source media="(max-width: 768px)" srcset="image/Kapak/en/acltear.jpg">
                                 <img src="image/hakan_cicek.jpg" class="img-fluid rounded-4 w-100"
-                                    style="max-height: 80vh; object-fit: cover;" alt="Adana Diskoid Menisküs Cerrahisi">
+                                    style="max-height: 80vh; object-fit: cover;"
+                                    alt="Discoid Meniscus Surgery in Adana">
                             </picture>
                         </div>
                         <div class="swiper-slide">
                             <picture>
                                 <source media="(max-width: 768px)" srcset="image/Kapak/en/meniscus_tears.jpg">
                                 <img src="image/hakan_cicek.jpg" class="img-fluid rounded-4 w-100"
-                                    style="max-height: 80vh; object-fit: cover;" alt="Adana Menisküs Yırtığı">
+                                    style="max-height: 80vh; object-fit: cover;" alt="Meniscus Tears in Adana">
                             </picture>
                         </div>
                         <div class="swiper-slide">
@@ -792,7 +276,7 @@ In your html page, add the snippet and call gtag_report_conversion when someone 
                                 <source media="(max-width: 768px)" srcset="image/Kapak/en/aclrupture.jpg">
                                 <img src="image/hakan_cicek.jpg" class="img-fluid rounded-4 w-100"
                                     style="max-height: 80vh; object-fit: cover;"
-                                    alt="Ön Çapraz Bağ Kopması Sonrası Spor Dönebilir Miyim?">
+                                    alt="Can I Return to Sports After ACL Rupture in Adana?">
                             </picture>
                         </div>
                     </div>
@@ -820,6 +304,58 @@ In your html page, add the snippet and call gtag_report_conversion when someone 
                             <div class="swiper bannerTextSwiper">
                                 <div class="swiper-wrapper">
                                     <div class="swiper-slide">
+                                        <a href="https://www.instagram.com/p/DPg6pSlDD3s/" target="_blank">
+                                            <button class="request-loader">
+                                                <i class="fa-solid fa-play ms-1"></i>
+                                            </button>
+                                        </a>
+                                        <p class="p-banner">
+                                            What are the Signs of Osteoarthritis?
+                                        </p>
+                                    </div>
+                                    <div class="swiper-slide">
+                                        <a href="https://www.instagram.com/p/DTuaG0LDL7X/" target="_blank">
+                                            <button class="request-loader">
+                                                <i class="fa-solid fa-play ms-1"></i>
+                                            </button>
+                                        </a>
+                                        <p class="p-banner">
+                                            What is Total Knee Replacement Surgery?
+                                        </p>
+                                    </div>
+                                    <div class="swiper-slide">
+                                        <a href="https://www.instagram.com/p/DUqE4LRDGit/" target="_blank">
+                                            <button class="request-loader">
+                                                <i class="fa-solid fa-play ms-1"></i>
+                                            </button>
+                                        </a>
+                                        <p class="p-banner">
+                                            How Does Total Knee Replacement Surgery Affect Knee Movements?
+                                        </p>
+                                    </div>
+                                    <div class="swiper-slide">
+                                        <a href="https://www.instagram.com/p/DXuEeErjEO2/" target="_blank">
+                                            <button class="request-loader">
+                                                <i class="fa-solid fa-play ms-1"></i>
+                                            </button>
+                                        </a>
+                                        <p class="p-banner">
+                                            Why is it necessary to repair all damaged ligaments in multiple ligament
+                                            injuries?
+                                        </p>
+                                    </div>
+                                    <div class="swiper-slide">
+                                        <a href="https://www.instagram.com/p/DW4JFnsjDTe/" target="_blank">
+                                            <button class="request-loader">
+                                                <i class="fa-solid fa-play ms-1"></i>
+                                            </button>
+                                        </a>
+                                        <p class="p-banner">
+                                            What are Ligament Injuries?
+                                        </p>
+                                    </div>
+
+                                    <div class="swiper-slide">
                                         <a href="https://www.youtube.com/shorts/AuOs09S8ovg" data-fancybox
                                             class="video-btn">
                                             <button class="request-loader">
@@ -827,8 +363,7 @@ In your html page, add the snippet and call gtag_report_conversion when someone 
                                             </button>
                                         </a>
                                         <p class="p-banner">
-                                            Is MRI alone sufficient for diagnosing Anterior Cruciate Ligament (ACL)
-                                            tear?
+                                            Is MRI Alone Sufficient for Diagnosing Anterior Cruciate Ligament Rupture?
                                         </p>
                                     </div>
                                     <div class="swiper-slide">
@@ -1852,6 +1387,66 @@ In your html page, add the snippet and call gtag_report_conversion when someone 
                                 <div class="swiper-slide">
                                     <div class="video-card">
                                         <div class="video-thumbnail">
+                                            <img src="image/Kapak/en/osteoarthritis.jpg"
+                                                alt="What are the Symptoms of Osteoarthritis?">
+                                            <a href="https://www.instagram.com/p/DPg6pSlDD3s/" target="_blank">
+                                                <i class="fa-solid fa-play"></i>
+                                            </a>
+                                        </div>
+                                    </div>
+                                </div>
+                                <!-- Video 1 -->
+                                <div class="swiper-slide">
+                                    <div class="video-card">
+                                        <div class="video-thumbnail">
+                                            <img src="image/Kapak/en/whats-total-knee.jpg"
+                                                alt="What is Total Knee Replacement Surgery?">
+                                            <a href="https://www.instagram.com/p/DTuaG0LDL7X/" target="_blank">
+                                                <i class="fa-solid fa-play"></i>
+                                            </a>
+                                        </div>
+                                    </div>
+                                </div>
+                                <!-- Video 1 -->
+                                <div class="swiper-slide">
+                                    <div class="video-card">
+                                        <div class="video-thumbnail">
+                                            <img src="image/Kapak/en/total-knee-replacement.jpg"
+                                                alt="How Does Total Knee Replacement Surgery Affect Knee Movements?">
+                                            <a href="https://www.instagram.com/p/DUqE4LRDGit/" target="_blank">
+                                                <i class="fa-solid fa-play"></i>
+                                            </a>
+                                        </div>
+                                    </div>
+                                </div>
+                                <!-- Video 1 -->
+                                <div class="swiper-slide">
+                                    <div class="video-card">
+                                        <div class="video-thumbnail">
+                                            <img src="image/Kapak/en/repair-ligaments.jpg" alt="Why is it necessary to repair all damaged ligaments in multiple ligament
+                                            injuries?">
+                                            <a href="https://www.instagram.com/p/DXuEeErjEO2/" target="_blank">
+                                                <i class="fa-solid fa-play"></i>
+                                            </a>
+                                        </div>
+                                    </div>
+                                </div>
+                                <!-- Video 1 -->
+                                <div class="swiper-slide">
+                                    <div class="video-card">
+                                        <div class="video-thumbnail">
+                                            <img src="image/Kapak/en/ligament-injuries.jpg"
+                                                alt="What are Ligament Injuries?">
+                                            <a href="https://www.instagram.com/p/DW4JFnsjDTe" target="_blank">
+                                                <i class="fa-solid fa-play"></i>
+                                            </a>
+                                        </div>
+                                    </div>
+                                </div>
+                                <!-- Video 1 -->
+                                <div class="swiper-slide">
+                                    <div class="video-card">
+                                        <div class="video-thumbnail">
                                             <img src="image/Kapak/en/ligament_tear.jpg"
                                                 alt="Is MRI Alone Sufficient for Diagnosing ACL Tear?">
                                             <a href="https://www.youtube.com/shorts/AuOs09S8ovg" data-fancybox
@@ -1891,8 +1486,7 @@ In your html page, add the snippet and call gtag_report_conversion when someone 
                                 <div class="swiper-slide">
                                     <div class="video-card">
                                         <div class="video-thumbnail">
-                                            <img src="image/Kapak/en/meniscus_tears.jpg" alt="Menisküs Yırtığı">
-                                            alt="Meniscus Tear">
+                                            <img src="image/Kapak/en/meniscus_tears.jpg" alt="Meniscus Tear">
                                             <a href="https://www.youtube.com/shorts/jONMyYdFa78k" data-fancybox
                                                 class="play-button">
                                                 <i class="fa-solid fa-play"></i>
@@ -1916,8 +1510,7 @@ In your html page, add the snippet and call gtag_report_conversion when someone 
                                 <div class="swiper-slide">
                                     <div class="video-card">
                                         <div class="video-thumbnail">
-                                            <img src="image/Kapak/en/meniscus_tears.jpg" alt="Diskoid Menisküs">
-                                            alt="Discoid Meniscus">
+                                            <img src="image/Kapak/en/acltear.jpg" alt="Discoid Meniscus">
                                             <a href="https://www.youtube.com/shorts/NShcffz8A7k" data-fancybox
                                                 class="play-button">
                                                 <i class="fa-solid fa-play"></i>
@@ -1942,8 +1535,7 @@ In your html page, add the snippet and call gtag_report_conversion when someone 
                                 <div class="swiper-slide">
                                     <div class="video-card">
                                         <div class="video-thumbnail">
-                                            <img src="image/Kapak/en/arthritis.jpg" alt="Eklem Kireçlenmesi">
-                                            alt="Joint Calcification">
+                                            <img src="image/Kapak/en/arthritis.jpg" alt="Joint Calcification">
                                             <a href="https://www.youtube.com/shorts/MLjdyuRRvjE" data-fancybox
                                                 class="play-button">
                                                 <i class="fa-solid fa-play"></i>
@@ -1954,8 +1546,7 @@ In your html page, add the snippet and call gtag_report_conversion when someone 
                                 <div class="swiper-slide">
                                     <div class="video-card">
                                         <div class="video-thumbnail">
-                                            <img src="image/Kapak/en/impingement.jpg" alt="Omuz Sıkışması">
-                                            alt="Shoulder Impingement">
+                                            <img src="image/Kapak/en/impingement.jpg" alt="Shoulder Impingement">
                                             <a href="https://www.youtube.com/shorts/MlWYnPwawMw" data-fancybox
                                                 class="play-button">
                                                 <i class="fa-solid fa-play"></i>

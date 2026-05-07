@@ -3168,7 +3168,7 @@ a {
 
 @media (max-width: 768px) {
     .bannerSwiper .swiper-slide picture {
-        max-height: 40vh;
+        max-height: 50vh;
         width: 100%;
         display: flex;
         justify-content: center;
